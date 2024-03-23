@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1994442093217586985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1787236681173241796, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681173241796, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 3944
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681173241798, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681173241817, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347392, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347392, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347392, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347392, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347395, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347397, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Target_Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347406, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: checkTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787236681740347406, guid: 3a86519244e6322468f1595d4b8b56e4,
+        type: 3}
+      propertyPath: checkCollision
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a86519244e6322468f1595d4b8b56e4, type: 3}
