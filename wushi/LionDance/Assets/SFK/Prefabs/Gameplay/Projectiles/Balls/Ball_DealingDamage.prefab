@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7497120916008650781
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 832584935745366281, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832584935745366281, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832584935745366281, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832584935745366281, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832584935745366287, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Ball_DealingDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056454609032457008, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: materialColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056454609032457008, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: materialColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056454609032457008, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+        type: 3}
+      propertyPath: materialColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: afacd7142c04b5d49b01bcb8431cb9a7, type: 3}
+--- !u!1 &7171683709071483154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 832584935745366287, guid: afacd7142c04b5d49b01bcb8431cb9a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7497120916008650781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1654336594905290746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171683709071483154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c4d7522cbdf2f45969e06707a41292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToCompare: 
+  CollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7400601541733918925}
+        m_TargetAssemblyTypeName: DamageDealer, Assembly-CSharp
+        m_MethodName: DealDamange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7400601541733918925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171683709071483154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9cab02ce7b01243ab4c4a16592e6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: Default
+  damageAmount: 10
+  randomDamage: 0
+  damageRandomVariance: 0
+  repeat: 0
+  repeatTimes: 2
+  repeatDamage: 5
+  repeatInterval: 0.2
+  repeatDelay: 0.5
