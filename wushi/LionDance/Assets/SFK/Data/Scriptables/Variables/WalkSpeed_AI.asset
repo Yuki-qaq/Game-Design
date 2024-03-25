@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6538c8ca73a1a49b7cc87a2ea89500, type: 3}
   m_Name: WalkSpeed_AI
   m_EditorClassIdentifier: 
-  initialValue: 6
+  initialValue: 7
+  runtimeValue: 7

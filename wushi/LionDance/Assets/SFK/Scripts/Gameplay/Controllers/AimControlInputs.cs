@@ -91,7 +91,7 @@ public class AimControlInputs : AimControlBase
             centerLine = targetBall.position;
         }
 
-        UpdateAim();
+        //UpdateAim();
 
         if (!useInputVariable)
         {
@@ -153,6 +153,6 @@ public class AimControlInputs : AimControlBase
 
     private void OnAnimatorMove()
     {
-        animator.SetFloat("Direction", (centerLine - actions.AimPosition).x);
+       // animator.SetFloat("Direction", (centerLine - actions.AimPosition).x);
     }
 }

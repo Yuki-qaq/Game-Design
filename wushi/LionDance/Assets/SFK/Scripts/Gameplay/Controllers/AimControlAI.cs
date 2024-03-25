@@ -30,18 +30,18 @@ public class AimControlAI : AimControlBase
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = new Color(1, 0.92f, 0.016f, 0.5f);
-        Vector3 center = new((minShootPos.x + maxShootPos.x) / 2, 0, (minShootPos.y + maxShootPos.y) / 2);
-        Vector3 scale = new(Mathf.Abs(minShootPos.x - maxShootPos.x), 1, Mathf.Abs(minShootPos.y - maxShootPos.y));
-        Gizmos.DrawCube(center, scale);
-        UnityEditor.Handles.Label(center + Vector3.up, "AI Shoot target area");
-
-        if (Application.isPlaying)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(actions.AimPosition, 1);
-
-        }
+        // Gizmos.color = new Color(1, 0.92f, 0.016f, 0.5f);
+        // Vector3 center = new((minShootPos.x + maxShootPos.x) / 2, 0, (minShootPos.y + maxShootPos.y) / 2);
+        // Vector3 scale = new(Mathf.Abs(minShootPos.x - maxShootPos.x), 1, Mathf.Abs(minShootPos.y - maxShootPos.y));
+        // Gizmos.DrawCube(center, scale);
+        // UnityEditor.Handles.Label(center + Vector3.up, "AI Shoot target area");
+        //
+        // if (Application.isPlaying)
+        // {
+        //     Gizmos.color = Color.red;
+        //     Gizmos.DrawWireSphere(actions.AimPosition, 1);
+        //
+        // }
     }
 #endif
 
@@ -56,13 +56,15 @@ public class AimControlAI : AimControlBase
         else
         {
 
-            centerLine = targetBall.position; 
+            centerLine = targetBall.position;
         }
 
         Vector3 hitPos = hitSource.position;
         Vector3 ballPos = centerLine;
+        Vector3 distVec = hitPos - ballPos;
+        distVec.y *= 0.5f;
 
-        float dist = Vector3.Distance(ballPos, hitPos);
+        float dist = distVec.magnitude;
 
         if (dist <= tryShootDistance && Time.time - lastShoot > retryShootDelay)
         {

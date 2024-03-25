@@ -24,6 +24,7 @@ public class TennisManager : MonoBehaviour
 
     private void OnBallLose(GameObject go)
     {
+        Debug.Log("OnBallLose " + go);
         TennisBall ball = go.GetComponent<TennisBall>();
         GameObject lastHitter = ball.LastHitter;
 
@@ -34,7 +35,7 @@ public class TennisManager : MonoBehaviour
         {
             PlayerLose(go);
         }
-        else if (Array.IndexOf(enemies, lastHitter) != -1) 
+        else if (Array.IndexOf(enemies, lastHitter) != -1)
         {
             PlayerWin(go);
         }
@@ -43,6 +44,7 @@ public class TennisManager : MonoBehaviour
 
     private void OnBallWin(GameObject go)
     {
+        Debug.Log("OnBallWin " + go);
         TennisBall ball = go.GetComponent<TennisBall>();
         GameObject lastHitter = ball.LastHitter;
 

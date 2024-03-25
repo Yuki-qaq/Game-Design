@@ -45,13 +45,27 @@ public class TennisActions : MonoBehaviour
         }
     }
 
+    public Vector3 aimOffset;
+    public float aimHight;
+    public float aimZMin;
+    public float aimZMax;
+    Vector3 GetSimulatedGoodAimPos()
+    {
+        var p = transform.position + aimOffset;
+        p.y = aimHight;
+        p.x += Random.Range(-1f, 1f);
+        p.z = Mathf.Clamp(p.z, aimZMin, aimZMax);
+        return p;
+    }
+
     protected void CalculateForce(Transform source = null)
     {
         if (source == null)
             source = transform;
 
         //Vector3 p = AimPosition;
-
+        if (!isOpponent)
+            AimPosition = GetSimulatedGoodAimPos();
         float gravity = Physics.gravity.magnitude;
         // Selected angle in radians
         float angle = HitAngle * Mathf.Deg2Rad;
@@ -99,13 +113,17 @@ public class TennisActions : MonoBehaviour
         PrepareShoot("Swing", liftAngle, liftDuration, liftVariance, liftForceRandom);
     }
 
+    public bool isOpponent;
     protected void PrepareShoot(string animation, float angle, float duration, float angleVariance = 0, float forceRandom = 0)
     {
         if (!CanShoot)
             return;
 
-        animator.SetTrigger(animation);
-        PlayerBehaviour.instance.hit.TryHit();
+        if (isOpponent)
+            animator.SetTrigger(animation);
+        else
+            PlayerBehaviour.instance.hit.TryHit();
+
         HitAngle = Random.Range(-angleVariance, angleVariance) + angle;
         HitRandom = new Vector3(Random.Range(-forceRandom, forceRandom), Random.Range(-forceRandom, forceRandom), Random.Range(-forceRandom, forceRandom));
 
