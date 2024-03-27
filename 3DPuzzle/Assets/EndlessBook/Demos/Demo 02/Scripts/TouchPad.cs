@@ -163,14 +163,15 @@
             Vector2 hitPositionNormalized;
             PageEnum page;
             bool tableOfContents;
-
+            Debug.Log("DetectTouchDown");
             // get the hit point if we can
             if (GetHitPoint(position, out hitPosition, out hitPositionNormalized, out page, out tableOfContents))
             {
                 // touched down and stopped dragging
                 touchDown = true;
                 dragging = false;
-
+                Debug.Log(page);
+                Debug.Log(tableOfContents);
                 if (tableOfContents)
                 {
                     // table of contents "button" clicked

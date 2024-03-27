@@ -1,58 +1,158 @@
 fileFormatVersion: 2
 guid: 33b27466edd43ba41b676788b438db21
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Bone_01
-    100002: Bone_02
-    100004: Bone_03
-    100006: Bone_04
-    100008: Bone_05
-    100010: Bone_06
-    100012: Bone_07
-    100014: Bone_08
-    100016: Bone_09
-    100018: Bone_10
-    100020: Bone_11
-    100022: Bone_11_end
-    100024: //RootNode
-    100026: Page
-    100028: Page_Armature
-    100030: Book
-    400000: Bone_01
-    400002: Bone_02
-    400004: Bone_03
-    400006: Bone_04
-    400008: Bone_05
-    400010: Bone_06
-    400012: Bone_07
-    400014: Bone_08
-    400016: Bone_09
-    400018: Bone_10
-    400020: Bone_11
-    400022: Bone_11_end
-    400024: //RootNode
-    400026: Page
-    400028: Page_Armature
-    400030: Book
-    2100000: PageRight
-    2100002: PageLeft
-    2100004: PageFront
-    2100006: PageBack
-    2100008: BookCover.002
-    2100010: BookPageBack.002
-    2100012: BookPageRight.002
-    2100014: BookPageLeft.002
-    2100016: BookPageFront.002
-    2300000: Book
-    3300000: Book
-    4300000: Page
-    4300002: Book
-    7400000: TurnForward
-    7400002: TurnBackward
-    7400004: Reset
-    9500000: //RootNode
-    13700000: Page
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bone_01
+  - first:
+      1: 100002
+    second: Bone_02
+  - first:
+      1: 100004
+    second: Bone_03
+  - first:
+      1: 100006
+    second: Bone_04
+  - first:
+      1: 100008
+    second: Bone_05
+  - first:
+      1: 100010
+    second: Bone_06
+  - first:
+      1: 100012
+    second: Bone_07
+  - first:
+      1: 100014
+    second: Bone_08
+  - first:
+      1: 100016
+    second: Bone_09
+  - first:
+      1: 100018
+    second: Bone_10
+  - first:
+      1: 100020
+    second: Bone_11
+  - first:
+      1: 100022
+    second: Bone_11_end
+  - first:
+      1: 100024
+    second: //RootNode
+  - first:
+      1: 100026
+    second: Page
+  - first:
+      1: 100028
+    second: Page_Armature
+  - first:
+      1: 100030
+    second: Book
+  - first:
+      4: 400000
+    second: Bone_01
+  - first:
+      4: 400002
+    second: Bone_02
+  - first:
+      4: 400004
+    second: Bone_03
+  - first:
+      4: 400006
+    second: Bone_04
+  - first:
+      4: 400008
+    second: Bone_05
+  - first:
+      4: 400010
+    second: Bone_06
+  - first:
+      4: 400012
+    second: Bone_07
+  - first:
+      4: 400014
+    second: Bone_08
+  - first:
+      4: 400016
+    second: Bone_09
+  - first:
+      4: 400018
+    second: Bone_10
+  - first:
+      4: 400020
+    second: Bone_11
+  - first:
+      4: 400022
+    second: Bone_11_end
+  - first:
+      4: 400024
+    second: //RootNode
+  - first:
+      4: 400026
+    second: Page
+  - first:
+      4: 400028
+    second: Page_Armature
+  - first:
+      4: 400030
+    second: Book
+  - first:
+      21: 2100000
+    second: PageRight
+  - first:
+      21: 2100002
+    second: PageLeft
+  - first:
+      21: 2100004
+    second: PageFront
+  - first:
+      21: 2100006
+    second: PageBack
+  - first:
+      21: 2100008
+    second: BookCover.002
+  - first:
+      21: 2100010
+    second: BookPageBack.002
+  - first:
+      21: 2100012
+    second: BookPageRight.002
+  - first:
+      21: 2100014
+    second: BookPageLeft.002
+  - first:
+      21: 2100016
+    second: BookPageFront.002
+  - first:
+      23: 2300000
+    second: Book
+  - first:
+      33: 3300000
+    second: Book
+  - first:
+      43: 4300000
+    second: Page
+  - first:
+      43: 4300002
+    second: Book
+  - first:
+      74: 7400000
+    second: TurnForward
+  - first:
+      74: 7400002
+    second: TurnBackward
+  - first:
+      74: 7400004
+    second: Reset
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Page
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -75,7 +175,7 @@ ModelImporter:
       name: PageRight
     second: {fileID: 2100000, guid: 872db7b9ba4cc0e4b997aa775db3e65c, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -84,6 +184,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 0
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -104,6 +205,7 @@ ModelImporter:
     - serializedVersion: 16
       name: TurnForward
       takeName: Page_Armature|Page_ArmatureAction.001
+      internalID: 0
       firstFrame: 1
       lastFrame: 24
       wrapMode: 0
@@ -132,6 +234,7 @@ ModelImporter:
     - serializedVersion: 16
       name: TurnBackward
       takeName: Page_Armature|Page_ArmatureAction.001
+      internalID: 0
       firstFrame: 27
       lastFrame: 50
       wrapMode: 0
@@ -163,34 +266,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: 1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -200,14 +318,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
