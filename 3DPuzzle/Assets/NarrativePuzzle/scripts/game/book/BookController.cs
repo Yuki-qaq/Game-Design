@@ -57,7 +57,7 @@ public class BookController : MonoBehaviour
     /// <summary>
     /// What page is the table of contents on?
     /// </summary>
-    public int tableOfContentsPageNumber;
+    public int targetPageNumber;
 
     /// <summary>
     /// The sound to make when the book opens
@@ -102,7 +102,6 @@ public class BookController : MonoBehaviour
         // set up touch pad handlers
         touchPad.touchDownDetected = TouchPadTouchDownDetected;
         touchPad.touchUpDetected = TouchPadTouchUpDetected;
-        touchPad.tableOfContentsDetected = TableOfContentsDetected;
         touchPad.dragDetected = TouchPadDragDetected;
 
         // set the book closed
@@ -273,6 +272,9 @@ public class BookController : MonoBehaviour
         }
     }
 
+    [SerializeField] int _targetHouseViewPage;
+    [SerializeField] BookCamera _bookCamera;
+    [SerializeField] TouchPad _touchPad;
     /// <summary>
     /// Handler for when a page stops turning.
     /// We toggle the page views for the mini-scenes off for the relevent pages
@@ -285,6 +287,7 @@ public class BookController : MonoBehaviour
     /// <param name="turnDirection">The direction the page is turning</param>
     protected virtual void OnPageTurnEnd(Page page, int pageNumberFront, int pageNumberBack, int pageNumberFirstVisible, int pageNumberLastVisible, Page.TurnDirectionEnum turnDirection)
     {
+        Debug.Log("OnPageTurnEnd pageNumberBack " + pageNumberBack);
         switch (turnDirection)
         {
             case Page.TurnDirectionEnum.TurnForward:
@@ -303,14 +306,12 @@ public class BookController : MonoBehaviour
 
                 break;
         }
-    }
 
-    /// <summary>
-    /// Turns to the table of contents
-    /// </summary>
-    protected virtual void TableOfContentsDetected()
-    {
-        TurnToPage(tableOfContentsPageNumber);
+        if (_targetHouseViewPage == pageNumberBack)
+        {
+            _touchPad.gameObject.SetActive(false);
+            _bookCamera.FocusOnTargetPage();
+        }
     }
 
     /// <summary>

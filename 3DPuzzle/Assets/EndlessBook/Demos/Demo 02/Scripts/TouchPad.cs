@@ -171,7 +171,6 @@
                 touchDown = true;
                 dragging = false;
                 Debug.Log(page);
-                Debug.Log(tableOfContents);
                 if (tableOfContents)
                 {
                     // table of contents "button" clicked
