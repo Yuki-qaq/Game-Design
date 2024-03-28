@@ -154,7 +154,7 @@
         /// <param name="backMaterial">The back of the page material</param>
         public virtual void Turn(TurnDirectionEnum direction, float time, Material frontMaterial, Material backMaterial)
         {
-			// cache the turn direction
+            // cache the turn direction
 			turnDirectionHash = direction == TurnDirectionEnum.TurnForward ? AnimationDirectionForwardHash : AnimationDirectionBackwardHash;
 			oppositeTurnDirectionHash = direction == TurnDirectionEnum.TurnForward ? AnimationDirectionBackwardHash : AnimationDirectionForwardHash;
 
