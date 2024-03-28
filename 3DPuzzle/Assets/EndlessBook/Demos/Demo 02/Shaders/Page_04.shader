@@ -530,6 +530,30 @@ Shader "Shader Weaver/Page_04"{
 				if(discard_uv4 == true) color_uv4 = float4(0,0,0,0);
 				uv_uv4 = -(color_uv4.r*fixed2(-0.04882813,0.01464844) + color_uv4.g*fixed2(0.009765625,0.04003906) + color_uv4.b*fixed2(0.03320313,-0.004882813) +  color_uv4.a*fixed2(0,0));    
 
+	
+				//====================================
+				//============ uv6 ============   
+				float2 uv_uv6 = i._uv_STD;
+				float2 center_uv6 = float2(0.5, 0.5);
+				uv_uv6 = uv_uv6 - center_uv6;
+				uv_uv6 = uv_uv6 + fixed2(0, 0);
+				uv_uv6 = uv_uv6 + fixed2(-0, 0.04) * (_Time.y);
+				uv_uv6 = UV_RotateAround(fixed2(0, 0), uv_uv6, 0);
+				uv_uv6 = uv_uv6 / fixed2(0.1699219, 0.1738281);
+				float2 dir_uv6 = uv_uv6 / length(uv_uv6);
+				uv_uv6 = uv_uv6 - dir_uv6 * fixed2(0, 0) * (_Time.y);
+				uv_uv6 = UV_RotateAround(fixed2(0, 0), uv_uv6, 0 * (_Time.y));
+				uv_uv6 = uv_uv6 + center_uv6;
+				float2 uv_uv6orgin = uv_uv6;
+				uv_uv6 = float2(uv_uv6.x > 0 ? fmod(uv_uv6.x, 1 + 0) : (1 + 0) - fmod(abs(uv_uv6.x), 1 + 0), uv_uv6.y > 0 ? fmod(uv_uv6.y, 1 + 0) : (1 + 0) - fmod(abs(uv_uv6.y), 1 + 0));
+				bool discard_uv6 = false;
+				if (uv_uv6.x > 1 || uv_uv6.y > 1)
+					discard_uv6 = true;
+				float4 rect_uv6 = float4(1, 1, 1, 1);
+				float4 color_uv6 = tex2D(_Wave, uv_uv6);
+				if (discard_uv6 == true)
+					color_uv6 = float4(0, 0, 0, 0);
+				uv_uv6 = -(color_uv6.r * fixed2(-0.04882813, 0.01464844) + color_uv6.g * fixed2(0.009765625, 0.04003906) + color_uv6.b * fixed2(0.03320313, -0.004882813) + color_uv6.a * fixed2(0, 0));
 
 				//====================================
 				//============ ROOT ============   
@@ -546,6 +570,7 @@ Shader "Shader Weaver/Page_04"{
 				uv_ROOT = uv_ROOT+center_ROOT;    
 				uv_ROOT = uv_ROOT + uv_uv2*1*((1))*color_PageBackground_04_mask0.r;
 				uv_ROOT = uv_ROOT + uv_uv4*1*((1))*color_PageBackground_04_mask0.g;
+				uv_ROOT = uv_ROOT + uv_uv6*1*((1))*color_PageBackground_04_mask0.b;
 				float4 rect_ROOT =  float4(1,1,1,1);
 				float4 color_ROOT = tex2D(_MainTex,uv_ROOT);    
 				float4 rootTexColor = color_ROOT;
