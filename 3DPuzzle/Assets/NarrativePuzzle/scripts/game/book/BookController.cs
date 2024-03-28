@@ -19,10 +19,6 @@ using echo17.EndlessBook.Demo02;
 /// </summary>
 public class BookController : MonoBehaviour
 {
-    /// <summary>
-    /// Make sure the audio is off so that we don't get an open sound at the beginning
-    /// </summary>
-    protected bool audioOn = false;
 
     /// <summary>
     /// Whether pages are being flipped
@@ -58,32 +54,6 @@ public class BookController : MonoBehaviour
     /// What page is the table of contents on?
     /// </summary>
     public int targetPageNumber;
-
-    /// <summary>
-    /// The sound to make when the book opens
-    /// </summary>
-    public AudioSource bookOpenSound;
-
-    /// <summary>
-    /// The sound to make when the book closes
-    /// </summary>
-    public AudioSource bookCloseSound;
-
-    /// <summary>
-    /// The sounds for each of the page components' turn
-    /// </summary>
-    public AudioSource pageTurnSound;
-
-    /// <summary>
-    /// The sound to make when multiple pages are turning
-    /// </summary>
-    public AudioSource pagesFlippingSound;
-
-    /// <summary>
-    /// The delay to incur when playing the page flipping sound
-    /// </summary>
-    public float pagesFlippingSoundDelay;
-
     /// <summary>
     /// The touchpad to handle interaction with the book and pages
     /// </summary>
@@ -106,10 +76,6 @@ public class BookController : MonoBehaviour
 
         // set the book closed
         OnBookStateChanged(EndlessBook.StateEnum.ClosedFront, EndlessBook.StateEnum.ClosedFront, -1);
-
-        // turn on the audio now that the book state is set the first time,
-        // otherwise we'd hear a noise and no change would occur
-        audioOn = true;
     }
 
     /// <summary>
@@ -125,11 +91,6 @@ public class BookController : MonoBehaviour
             case EndlessBook.StateEnum.ClosedFront:
             case EndlessBook.StateEnum.ClosedBack:
 
-                // play the closed sound
-                if (audioOn)
-                {
-                    //bookCloseSound.Play();
-                }
 
                 // turn off page mini-scenes
                 TurnOffAllPageViews();
@@ -181,8 +142,6 @@ public class BookController : MonoBehaviour
         // right page should only be available if the book is not in the ClosedBack state
         touchPad.Toggle(TouchPad.PageEnum.Right, on && book.CurrentState != EndlessBook.StateEnum.ClosedBack);
 
-        // only use the table of contents "button" if not on the first group of pages
-        touchPad.ToggleTableOfContents(on && book.CurrentLeftPageNumber > 1);
     }
 
     /// <summary>
@@ -207,19 +166,22 @@ public class BookController : MonoBehaviour
     protected virtual void TogglePageView(int pageNumber, bool on)
     {
         var pageView = GetPageView(pageNumber);
+        Debug.Log("TogglePageView " + pageNumber + " on " + on);
+        foreach (var ptsd in _pageToggleSceneData)
+        {
+            if (on && pageNumber == ptsd.page)
+                ptsd.On();
+        }
 
         if (pageView != null)
         {
-            if (pageView != null)
+            if (on)
             {
-                if (on)
-                {
-                    pageView.Activate();
-                }
-                else
-                {
-                    pageView.Deactivate();
-                }
+                pageView.Activate();
+            }
+            else
+            {
+                pageView.Deactivate();
             }
         }
     }
@@ -237,10 +199,7 @@ public class BookController : MonoBehaviour
     /// <param name="turnDirection">The direction the page is turning</param>
     protected virtual void OnPageTurnStart(Page page, int pageNumberFront, int pageNumberBack, int pageNumberFirstVisible, int pageNumberLastVisible, Page.TurnDirectionEnum turnDirection)
     {
-        Debug.Log("OnPageTurnStart");
-        Debug.Log(page);
-        Debug.Log(pageNumberFront);
-        Debug.Log(pageNumberBack);
+        //Debug.Log("OnPageTurnStart pageNumberBack " + pageNumberBack);
         // play page turn sound if not flipping through multiple pages
         if (!flipping)
         {
@@ -272,9 +231,7 @@ public class BookController : MonoBehaviour
         }
     }
 
-    [SerializeField] int _targetHouseViewPage;
     [SerializeField] BookCamera _bookCamera;
-    [SerializeField] TouchPad _touchPad;
     /// <summary>
     /// Handler for when a page stops turning.
     /// We toggle the page views for the mini-scenes off for the relevent pages
@@ -287,7 +244,7 @@ public class BookController : MonoBehaviour
     /// <param name="turnDirection">The direction the page is turning</param>
     protected virtual void OnPageTurnEnd(Page page, int pageNumberFront, int pageNumberBack, int pageNumberFirstVisible, int pageNumberLastVisible, Page.TurnDirectionEnum turnDirection)
     {
-        Debug.Log("OnPageTurnEnd pageNumberBack " + pageNumberBack);
+        //Debug.Log("OnPageTurnEnd pageNumberBack " + pageNumberBack);
         switch (turnDirection)
         {
             case Page.TurnDirectionEnum.TurnForward:
@@ -306,14 +263,9 @@ public class BookController : MonoBehaviour
 
                 break;
         }
-
-        if (_targetHouseViewPage == pageNumberBack)
-        {
-            _touchPad.gameObject.SetActive(false);
-            _bookCamera.FocusOnTargetPage();
-        }
     }
 
+    [SerializeField] private PageToggleSceneData[] _pageToggleSceneData;
     /// <summary>
     /// Handles whether a mouse down was detected on the touchpad
     /// </summary>
@@ -374,7 +326,7 @@ public class BookController : MonoBehaviour
 
                         // transition from the ClosedFront to the OpenFront states
                         OpenFront();
-
+                        //   Debug.Log("OpenFront");
                         break;
                 }
 
@@ -388,14 +340,14 @@ public class BookController : MonoBehaviour
 
                         // transition from the OpenFront to the ClosedFront states
                         ClosedFront();
-
+                        //  Debug.Log("ClosedFront");
                         break;
 
                     case TouchPad.PageEnum.Right:
 
                         // transition from the OpenFront to the OpenMiddle states
                         OpenMiddle();
-
+                        //  Debug.Log("OpenMiddle");
                         break;
                 }
 
@@ -466,14 +418,14 @@ public class BookController : MonoBehaviour
 
                         // transition from the OpenBack to the OpenMiddle states
                         OpenMiddle();
-
+                        // Debug.Log("OpenMiddle");
                         break;
 
                     case TouchPad.PageEnum.Right:
 
                         // transition from the OpenBack to the ClosedBack states
                         ClosedBack();
-
+                        // Debug.Log("ClosedBack");
                         break;
                 }
 
@@ -487,7 +439,7 @@ public class BookController : MonoBehaviour
 
                         // transition from the ClosedBack to the OpenBack states
                         OpenBack();
-
+                        // Debug.Log("OpenBack");
                         break;
                 }
 
@@ -501,11 +453,13 @@ public class BookController : MonoBehaviour
 
                 if (book.CurrentLeftPageNumber == 1)
                 {
+                    //Debug.Log("OpenFront");
                     // if on the first page, transition from the OpenMiddle to the OpenFront states
                     OpenFront();
                 }
                 else
                 {
+                    //Debug.Log("TurnBackward");
                     // not on the first page, so just turn back one page
                     book.TurnBackward(singlePageTurnTime, onCompleted: OnBookStateChanged, onPageTurnStart: OnPageTurnStart, onPageTurnEnd: OnPageTurnEnd);
                 }
@@ -516,11 +470,13 @@ public class BookController : MonoBehaviour
 
                 if (book.CurrentRightPageNumber == book.LastPageNumber)
                 {
+                    //Debug.Log("OpenBack");
                     // if on the last page, transition from the OpenMiddle to the OpenBack states
                     OpenBack();
                 }
                 else
                 {
+                    //Debug.Log("TurnForward");
                     // not on the last page, so just turn forward a page
                     book.TurnForward(singlePageTurnTime, onCompleted: OnBookStateChanged, onPageTurnStart: OnPageTurnStart, onPageTurnEnd: OnPageTurnEnd);
                 }
@@ -675,7 +631,7 @@ public class BookController : MonoBehaviour
         if (Mathf.Abs(newLeftPageNumber - book.CurrentLeftPageNumber) > 2)
         {
             flipping = true;
-            pagesFlippingSound.PlayDelayed(pagesFlippingSoundDelay);
+            //pagesFlippingSound.PlayDelayed(pagesFlippingSoundDelay);
         }
 
         // turn to page
