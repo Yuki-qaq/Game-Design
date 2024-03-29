@@ -8,7 +8,10 @@ Shader"Vom/Weaver"{
 		_MainTex ("_MainTex", 2D) = "white" { }
 		_PageBackground_04_mask0 ("_PageBackground_04_mask0", 2D) = "white" { }
 		_Wave ("_Wave", 2D) = "white" { }
-        _dirChannelRed ("ChannelRedDirection", Vector) = (1,1,0,0)
+        _speedRatio("Speed Ratio", float) = 1
+        _dirChannelR ("ChannelRedDirection", Vector) = (1,0,0,0)
+        _dirChannelG ("ChannelRedDirection", Vector) = (0,1,0,0)
+        _dirChannelB ("ChannelRedDirection", Vector) = (0.7,0.7,0,0)
 	}   
 	SubShader {   
 		Tags {
@@ -28,7 +31,10 @@ float4 _MainTex_ST;
 sampler2D _MainTex;
 sampler2D _PageBackground_04_mask0;
 sampler2D _Wave;
-float4 _dirChannelRed;
+float4 _dirChannelR;
+float4 _dirChannelG;
+float4 _dirChannelB;
+float _speedRatio;
 
 struct appdata_t
 {
@@ -503,7 +509,7 @@ float4 frag(v2f i) : COLOR
     float2 center_uv2 = float2(0.5, 0.5);
     uv_uv2 = uv_uv2 - center_uv2;
     uv_uv2 = uv_uv2 + fixed2(0, 0);
-    uv_uv2 = uv_uv2 + fixed2(0.02734375, 0.02246094) * (_Time.y);
+    uv_uv2 = uv_uv2 + fixed2(_dirChannelR.x, _dirChannelR.y) * (_Time.y) * _speedRatio;
     uv_uv2 = UV_RotateAround(fixed2(0, 0), uv_uv2, 0);
     uv_uv2 = uv_uv2 / fixed2(0.1328125, 0.125);
     float2 dir_uv2 = uv_uv2 / length(uv_uv2);
@@ -528,7 +534,7 @@ float4 frag(v2f i) : COLOR
     float2 center_uv4 = float2(0.5, 0.5);
     uv_uv4 = uv_uv4 - center_uv4;
     uv_uv4 = uv_uv4 + fixed2(0, 0);
-    uv_uv4 = uv_uv4 + fixed2(-0.00390625, -0.03222656) * (_Time.y);
+    uv_uv4 = uv_uv4 + fixed2(_dirChannelG.x, _dirChannelG.y) * (_Time.y) * _speedRatio;
     uv_uv4 = UV_RotateAround(fixed2(0, 0), uv_uv4, 0);
     uv_uv4 = uv_uv4 / fixed2(0.1699219, 0.1738281);
     float2 dir_uv4 = uv_uv4 / length(uv_uv4);
@@ -554,7 +560,7 @@ float4 frag(v2f i) : COLOR
     uv_uv6 = uv_uv6 - center_uv6;
     uv_uv6 = uv_uv6 + fixed2(0, 0);
 
-    uv_uv6 = uv_uv6 + fixed2(_dirChannelRed.x, _dirChannelRed.y) * (_Time.y);
+    uv_uv6 = uv_uv6 + fixed2(_dirChannelB.x, _dirChannelB.y) * (_Time.y) * _speedRatio;
     
     uv_uv6 = UV_RotateAround(fixed2(0, 0), uv_uv6, 0);
     uv_uv6 = uv_uv6 / fixed2(0.1699219, 0.1738281);

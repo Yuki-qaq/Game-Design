@@ -48,9 +48,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _speedRatio: 0.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_ROOT: {r: 1, g: 1, b: 1, a: 1}
+    - _dirChannelB: {r: 0.1, g: 0.5, b: 0, a: 0}
+    - _dirChannelG: {r: 0, g: -1, b: 0, a: 0}
+    - _dirChannelR: {r: 0.8, g: 0.2, b: 0, a: 0}
     - _dirChannelRed: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
