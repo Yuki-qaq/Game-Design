@@ -10,7 +10,7 @@ ModelImporter:
       name: M_Green_3
     second: {fileID: 2100000, guid: 3850b5754c8534c4db6e3873d311eb37, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

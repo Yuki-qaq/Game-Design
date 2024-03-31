@@ -10,7 +10,7 @@ ModelImporter:
       name: M_bridge2
     second: {fileID: 2100000, guid: 10f8b81e43f40744ba40b711c4d4c46c, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

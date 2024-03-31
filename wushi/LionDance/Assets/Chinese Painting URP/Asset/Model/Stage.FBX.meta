@@ -20,7 +20,7 @@ ModelImporter:
       name: M_b3
     second: {fileID: 2100000, guid: 4518be3c48c97ac4e90d6dfb94b00d42, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

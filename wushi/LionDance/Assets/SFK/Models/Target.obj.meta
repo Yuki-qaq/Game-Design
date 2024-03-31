@@ -10,7 +10,7 @@ ModelImporter:
       name: ProBuilderDefault
     second: {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

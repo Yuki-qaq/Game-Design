@@ -10,7 +10,7 @@ ModelImporter:
       name: M_Bule_1
     second: {fileID: 2100000, guid: 7608fa8b394e371448943abe99d7bcc2, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

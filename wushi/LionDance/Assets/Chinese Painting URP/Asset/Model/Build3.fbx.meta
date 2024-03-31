@@ -10,7 +10,7 @@ ModelImporter:
       name: Build3
     second: {fileID: 2100000, guid: db941bf0e3612ac4d8d8253a809bea20, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
