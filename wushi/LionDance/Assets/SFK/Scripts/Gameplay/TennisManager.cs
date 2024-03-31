@@ -25,31 +25,44 @@ public class TennisManager : MonoBehaviour
     private void OnBallLose(GameObject go)
     {
         Debug.Log("OnBallLose " + go);
-        ResetRound(go);
+        ResetRound(go, false);
     }
 
     private void OnBallWin(GameObject go)
     {
         Debug.Log("OnBallWin " + go);
-        ResetRound(go);
+        ResetRound(go, true);
     }
 
 
-    void ResetRound(GameObject go)
+    void ResetRound(GameObject go, bool isHitterWin)
     {
         TennisBall ball = go.GetComponent<TennisBall>();
         GameObject lastHitter = ball.LastHitter;
         Debug.Log("ResetRound " + lastHitter);
         ball.Stop();
 
-        // find out who lost
-        if (Array.IndexOf(players, lastHitter) != -1)
+        if (isHitterWin)
         {
-            PlayerLose(go);
+            if (Array.IndexOf(players, lastHitter) != -1)
+            {
+                PlayerWin(go);
+            }
+            else if (Array.IndexOf(enemies, lastHitter) != -1)
+            {
+                PlayerLose(go);
+            }
         }
-        else if (Array.IndexOf(enemies, lastHitter) != -1)
+        else
         {
-            PlayerWin(go);
+            if (Array.IndexOf(players, lastHitter) != -1)
+            {
+                PlayerLose(go);
+            }
+            else if (Array.IndexOf(enemies, lastHitter) != -1)
+            {
+                PlayerWin(go);
+            }
         }
     }
 

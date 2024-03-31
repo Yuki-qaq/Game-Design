@@ -25,7 +25,7 @@ public class TennisBall : Ball
     {
 
         Collider collider = collision.collider;
-        Debug.Log("[Ball col] bounces " + bounces + " side " + CurrentSide);
+        Debug.Log("Ball bounces " + bounces + " side " + CurrentSide + " col " + collision.gameObject.name + " tag " + collider.tag);
         if (CurrentSide == HitterSide)
         {
             Debug.Log("[Ball] last hitter loses for bouncing the ball on their side of the court");
@@ -66,7 +66,7 @@ public class TennisBall : Ball
 
         if (bounces > maxBounces)
         {
-            Debug.Log("[BALL] Too many bounces, last hitter wins");
+            Debug.Log("[BALL] Too many bounces, last hitter wins "+bounces);
             if (PointWinEvent)
             {
                 PointWinEvent.Raise(gameObject);

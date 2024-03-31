@@ -14,7 +14,10 @@ public class Ball : Projectile
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("bounces++");
+        if (collision.gameObject.GetComponent<TennisActions>() != null)
+            return;
+
+        Debug.Log("bounces++" + collision.gameObject);
         bounces++;
         BounceEvent?.Invoke(bounces);
     }

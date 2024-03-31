@@ -36,8 +36,10 @@ public class TennisActions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OnTriggerEnter " + other.gameObject);
         if (other.CompareTag(BALL_TAG))
         {
+            Debug.Log("hit ball!");
             TennisBall b = other.GetComponent<TennisBall>();
             //b.Hit((1 - UpForce) * HitForce * AimDirection + HitForce * UpForce * Vector3.up, gameObject);
             CalculateForce(b.transform);
