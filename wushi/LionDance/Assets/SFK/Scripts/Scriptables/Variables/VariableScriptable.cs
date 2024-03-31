@@ -8,7 +8,7 @@ public class VariableScriptable<T> : ScriptableObject, ISerializationCallbackRec
     protected T initialValue;
     public T InitialValue => initialValue;
 
-    [NaughtyAttributes.ReadOnly, SerializeField]
+    [SerializeField]
     protected T runtimeValue;
     public T Value
     {

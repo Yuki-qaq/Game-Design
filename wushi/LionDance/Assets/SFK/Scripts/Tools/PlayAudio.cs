@@ -1,5 +1,4 @@
-using JetBrains.Annotations;
-using NaughtyAttributes;
+
 using UnityEngine;
 
 public class PlayAudio : MonoBehaviour
@@ -14,11 +13,9 @@ public class PlayAudio : MonoBehaviour
     public AudioSource audioSource;
     
     public bool randomizeClip;
-    
-    [HideIf(nameof(randomizeClip))]
+
     public AudioClip clip;
 
-    [ShowIf(nameof(randomizeClip))]
     public AudioClip[] randomAudioClips = new AudioClip[1];
 
     [Range(0, 1)] public float volume = 1;
@@ -30,14 +27,12 @@ public class PlayAudio : MonoBehaviour
     [Tooltip("Where in the game space this audio should play: Attached to this object, At the specified position, or at the position of this transform")]
     public SoundPosition sourcePosition = SoundPosition.OnTransform;
 
-    [ShowIf(nameof(sourcePosition), SoundPosition.AtPosition)]
     public Vector3 position = Vector3.zero;
 
-    [ShowIf(nameof(sourcePosition), SoundPosition.OnTransform)]
     public Transform sourceTransform;
 
     public bool playMultiple = false;
-    [ShowIf(nameof(playMultiple))]
+
     public float playInterval = 1;
 
     AudioClip lastClip;

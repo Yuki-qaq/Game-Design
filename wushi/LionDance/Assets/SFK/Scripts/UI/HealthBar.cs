@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +7,9 @@ public class HealthBar : MonoBehaviour
     public HealthComponent health;
 
     public bool useAnimator = false;
-    [ShowIf(nameof(useAnimator))] public Animator animator;
-    [HideIf(nameof(useAnimator))] public Image bar;
     
     float ratio;
-
+    Animator animator;
     private void Reset()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +32,7 @@ public class HealthBar : MonoBehaviour
             return;
         }
 
-        bar.fillAmount = currentHealth * ratio;
+      //  bar.fillAmount = currentHealth * ratio;
     }
 
     private void OnDestroy()

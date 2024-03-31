@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using System;
 using System.Collections;
 using UnityEngine;
@@ -11,10 +11,10 @@ public class DestroyWithEvents : MonoBehaviour
 
     public bool autoDestroy;
     [Tooltip("Time to call destroy started event after starting destruction procedure")]
-    [ShowIf(nameof(autoDestroy))]
+
     public float destroyEventDelay = 1;
     [Tooltip("Additional time after event before removing the object from the scene")]
-    [ShowIf(nameof(autoDestroy))]
+
     public float destroyObjectDelay = 1;
     [Space]
 

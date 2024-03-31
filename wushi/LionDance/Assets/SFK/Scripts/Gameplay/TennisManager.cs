@@ -1,9 +1,11 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TennisManager : MonoBehaviour
 {
-    public int scorePerPoint = 100;
+    public int scorePerPoint = 1;
     public IntVariableScriptable playerScore;
     public IntVariableScriptable enemyScore;
     [Space]
@@ -73,6 +75,7 @@ public class TennisManager : MonoBehaviour
         playerScore.Value += scorePerPoint;
         go.transform.position = winBallStart.position;
         Debug.Log("ball at winBallStart");
+        CheckResult();
     }
 
     private void PlayerLose(GameObject go)
@@ -81,6 +84,34 @@ public class TennisManager : MonoBehaviour
         enemyScore.Value += scorePerPoint;
         go.transform.position = loseBallStart.position;
         Debug.Log("ball at loseBallStart");
+        CheckResult();
+    }
+
+    public CanvasGroup cgWin;
+    public CanvasGroup cgLoose;
+    public AudioSource sfxGameOver;
+    void CheckResult()
+    {
+        if (playerScore.Value >= 5)
+        {
+            cgWin.DOFade(1, 4).SetDelay(0.3f).SetEase(Ease.OutCubic).OnComplete(
+                () =>
+                {
+                    SceneManager.LoadScene(0);
+                    sfxGameOver.Play();
+                }
+                );
+        }
+        else if (enemyScore.Value >= 5)
+        {
+            cgLoose.DOFade(1, 4).SetDelay(0.3f).SetEase(Ease.OutCubic).OnComplete(
+              () =>
+              {
+                  SceneManager.LoadScene(0);
+                  sfxGameOver.Play();
+              }
+              );
+        }
     }
 
     private void OnDestroy()

@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+using com;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,14 +9,14 @@ public class Ball : Projectile
     public UnityEvent StopEvent;
     public UnityEvent HitEvent;
 
-    [SerializeField, ReadOnly]
+    [SerializeField]
     protected int bounces = 0;
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<TennisActions>() != null)
             return;
-
+        SoundSystem.instance.Play("clk", 0.3f);
         Debug.Log("bounces++" + collision.gameObject);
         bounces++;
         BounceEvent?.Invoke(bounces);

@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,9 +7,9 @@ public class ItemDataCollector : ItemDataChecker
 {
     [Header("Collection")]
     public bool useAmountVariable = false;
-    [ShowIf(nameof(useAmountVariable))]
+
     public IntVariableScriptable amountVariable;
-    [HideIf(nameof(useAmountVariable))]
+
     public int collectedAmount = 0;
 
     [Space]

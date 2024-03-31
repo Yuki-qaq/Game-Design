@@ -5,7 +5,6 @@ public class Projectile : MonoBehaviour
 {
 
     public bool autoLaunch = true;
-    [NaughtyAttributes.ShowIf(nameof(autoLaunch))]
     public Vector3 initialVelocity = Vector3.forward;
     public bool rotateVelocity = true;
 

@@ -1,13 +1,13 @@
-using NaughtyAttributes;
+
 
 public class Target : Hittable
 {
     public int pointsPerHit = 100;
 
     public bool useScriptablePoints = true;
-    [ShowIf(nameof(useScriptablePoints))]
+
     public IntVariableScriptable pointsVariable;
-    [HideIf(nameof(useScriptablePoints))]
+
     public int points;
 
     protected override void Init()

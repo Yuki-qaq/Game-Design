@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,25 +16,20 @@ public class InputEvent : MonoBehaviour
 
     public InputCheckMode checkKey = InputCheckMode.Key;
 
-    [ShowIf(nameof(checkKey), InputCheckMode.Key)]
+
     public KeyCode keyName = KeyCode.A;
-    [ShowIf(nameof(checkKey), InputCheckMode.Key)]
     public bool checkKeyUp;
 
     [Space]
 
-    [ShowIf(nameof(checkKey), InputCheckMode.Axis)]
     public string axisName = "Horizontal";
 
-    [ShowIf(nameof(checkKey), InputCheckMode.Axis)]
     [Range(-1, 1)] public float checkAxisValue = 1;
 
     [Space]
 
-    [ShowIf(nameof(checkKey), InputCheckMode.Touch)]
     public int touchFingerId = 0;
 
-    [ShowIf(nameof(checkKey), InputCheckMode.Touch)]
     public bool checkTouchEnd = false;
 
     [Space]

@@ -1,5 +1,4 @@
-using NaughtyAttributes;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class AimControlInputs : AimControlBase
@@ -13,22 +12,19 @@ public class AimControlInputs : AimControlBase
     //    Back, //4
     //}
 
-
-
+    public Vector3VariableScriptable inputVariable;
+    public string aimSidewaysAxis = "Mouse X";
+    public string aimLengthwiseAxis = "Mouse Y";
     [Header("Aim")]
     public bool useInputVariable = false;
-    [ShowIf(nameof(useInputVariable))] public Vector3VariableScriptable inputVariable;
 
-    [Space] 
+    [Space]
     public bool rotateMoveInputs = false;
-    [ShowIf(nameof(rotateMoveInputs))]
     public Vector3VariableScriptable inputRotationVariable;
     [Space]
 
-    [HideIf(nameof(useInputVariable))] public string aimSidewaysAxis = "Mouse X";
     [Tooltip("How fast the input axis influences the aim position")]
     [Min(0)] public float sidewaysMultiplier = 0.2f;
-    [HideIf(nameof(useInputVariable))] public string aimLengthwiseAxis = "Mouse Y";
     [Tooltip("How fast the input axis influences the aim position")]
     [Min(0)] public float lengthwiseMultiplier = 0.5f;
 
@@ -39,9 +35,7 @@ public class AimControlInputs : AimControlBase
 
     [Space]
     public bool useAimTargetVariable = false;
-    [HideIf(nameof(useAimTargetVariable))]
     public Transform aimTransform;
-    [ShowIf(nameof(useAimTargetVariable))]
     public Vector3VariableScriptable aimTargetVariable;
 
     [Header("Swing")]
@@ -69,8 +63,8 @@ public class AimControlInputs : AimControlBase
     private void Start()
     {
 
-        if (hideCursor && !useInputVariable)
-            Cursor.lockState = CursorLockMode.Locked;
+        // if (hideCursor && !useInputVariable)
+        //      Cursor.lockState = CursorLockMode.Locked;
     }
 
     protected void Update()
@@ -113,7 +107,7 @@ public class AimControlInputs : AimControlBase
         Vector3 currentPosition = transform.position;
 
         Vector3 input = useInputVariable ?
-            new(inputVariable.Value.x * sidewaysMultiplier, 0, inputVariable.Value.z * lengthwiseMultiplier) : 
+            new(inputVariable.Value.x * sidewaysMultiplier, 0, inputVariable.Value.z * lengthwiseMultiplier) :
             new(Input.GetAxis(aimSidewaysAxis) * sidewaysMultiplier, 0, Input.GetAxis(aimLengthwiseAxis) * lengthwiseMultiplier);
 
         if (rotateMoveInputs)
@@ -153,6 +147,6 @@ public class AimControlInputs : AimControlBase
 
     private void OnAnimatorMove()
     {
-       // animator.SetFloat("Direction", (centerLine - actions.AimPosition).x);
+        // animator.SetFloat("Direction", (centerLine - actions.AimPosition).x);
     }
 }

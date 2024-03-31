@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using UnityEngine;
 
 public class ColorPropertySetter : MonoBehaviour
@@ -64,13 +64,10 @@ public class ColorPropertySetter : MonoBehaviour
         materialRenderer.SetPropertyBlock(propertyBlock);
     }
 
-    [Button(null, EButtonEnableMode.Playmode)]
     public void ApplyColor() => ApplyColor(materialColor);
 
-    [Button(null, EButtonEnableMode.Playmode)]
     public void ApplyRandomColor() => ApplyColor(Random.ColorHSV());
 
-    [Button]
     public void RemoveColor()
     {
         propertyBlock.Clear();

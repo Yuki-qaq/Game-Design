@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +9,6 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] protected float maxHealth = 100;
 
     public bool destroyOnDeath = false;
-    [ShowIf(nameof(destroyOnDeath))]
     [Min(0)] public float deathDestroyDelay = 1;
 
     [Space]

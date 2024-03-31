@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using UnityEngine;
 
 [RequireComponent(typeof(AimControlBase), typeof(TennisActions), typeof(Rigidbody))]
@@ -11,22 +11,21 @@ public class TennisControllerAI : MonoBehaviour
     [Header("Movement")]
 
     public bool useMoveVariable = true;
-    [ShowIf(nameof(useMoveVariable))]
+
     public FloatVariableScriptable moveVariable;
-    [HideIf(nameof(useMoveVariable))]
+
     [Min(0)] public float moveSpeed = 5;
 
     public bool useSprintVariable = true;
-    [ShowIf(nameof(useSprintVariable))]
+
     public FloatVariableScriptable sprintVariable;
-    [HideIf(nameof(useSprintVariable))]
+
     [Min(0)] public float sprintSpeed = 8;
 
     //public float racketOffsetX = 1.5f;
     //public float racketOffsetZ = -1;
     [Min(0)] public float armLength = 1;
 
-    [SerializeField, ReadOnly]
     protected bool isRushing = false;
     protected Vector3 targetPosition;
     protected float speed;

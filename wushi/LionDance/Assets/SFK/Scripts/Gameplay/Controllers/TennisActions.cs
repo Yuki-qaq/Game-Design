@@ -1,3 +1,4 @@
+using com;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -75,6 +76,7 @@ public class TennisActions : MonoBehaviour
             Vector3 pos = new(Random.Range(aca.minShootPos.x, aca.maxShootPos.x), 0, Random.Range(aca.minShootPos.y, aca.maxShootPos.y));
             AimPosition = pos;
         }
+        SoundSystem.instance.Play("clk",0.7f);
         Debug.Log("AimPosition " + AimPosition);
         float gravity = Physics.gravity.magnitude;
         // Selected angle in radians
@@ -110,13 +112,10 @@ public class TennisActions : MonoBehaviour
         ShootReadyEvent?.Invoke();
     }
 
-    [NaughtyAttributes.Button()]
     public void Swing()
     {
         PrepareShoot("Swing", swingAngle, swingDuration, swingVariance, swingForceRandom);
     }
-
-    [NaughtyAttributes.Button()]
     public void Lift()
     {
         PrepareShoot("Swing", liftAngle, liftDuration, liftVariance, liftForceRandom);

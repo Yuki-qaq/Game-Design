@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +9,7 @@ public class FallingBlock : Hittable
 
     [Space]
     public bool respawn = false;
-    [ShowIf(nameof(respawn))]
+
     public float respawnDelay = 1;
 
     [Space]

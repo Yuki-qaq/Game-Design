@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using UnityEngine;
 
 public class VariablesToTransform : MonoBehaviour

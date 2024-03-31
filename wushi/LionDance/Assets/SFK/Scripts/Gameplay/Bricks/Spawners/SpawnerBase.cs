@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,17 +28,16 @@ public abstract class SpawnerBase : MonoBehaviour
 
     public bool useSpawnsVariable = false;
     [Tooltip("Number of spawnable entities (-1 = infinite)")]
-    [HideIf(nameof(useSpawnsVariable))]
+
     public int availableSpawns = -1;
-    [ShowIf(nameof(useSpawnsVariable))]
+
     public IntVariableScriptable availableSpawnsVar;
 
-    [Space, ReadOnly, SerializeField]
     protected int spawnCount;
 
     [Header("Forces")]
     public bool manageImpulse = false;
-    [ShowIf(nameof(manageImpulse))]
+
     [Min(0)] public float launchForce = 5;
 
     [Header("Destruction")]
@@ -46,11 +45,10 @@ public abstract class SpawnerBase : MonoBehaviour
     public bool checkInstanceDestroy = false;
     public bool manageInstanceDestroy = false;
     [Tooltip("Delay before the element starts destroying")]
-    [ShowIf(nameof(manageInstanceDestroy))]
+
     public float destroyEventDelay = 1;
 
     [Tooltip("Additional delay before the element is removed from the scene")]
-    [ShowIf(nameof(manageInstanceDestroy))]
     public float destroyObjectDelay = 1;
 
     protected int prefabIndex = 0;
