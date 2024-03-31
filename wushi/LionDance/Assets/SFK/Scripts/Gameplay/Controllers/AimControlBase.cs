@@ -34,13 +34,13 @@ public abstract class AimControlBase : MonoBehaviour
 
     protected bool FindBall()
     {
-        Debug.Log("Finding ball for " + gameObject.name);
+        //Debug.Log("Finding ball for " + gameObject.name);
         GameObject b = GameObject.FindGameObjectWithTag("Ball");
 
         if (b)
         {
             targetBall = b.transform;
-            Debug.Log(b.name + " ball found");
+            //Debug.Log(b.name + " ball found");
 
             return true;
         }

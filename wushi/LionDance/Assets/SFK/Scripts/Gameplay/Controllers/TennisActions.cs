@@ -120,7 +120,7 @@ public class TennisActions : MonoBehaviour
             return;
 
         if (isOpponent)
-            animator.SetTrigger(animation);
+            animator.SetTrigger("hit");
         else
             PlayerBehaviour.instance.hit.TryHit();
 

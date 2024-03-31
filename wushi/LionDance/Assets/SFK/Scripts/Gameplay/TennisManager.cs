@@ -25,9 +25,21 @@ public class TennisManager : MonoBehaviour
     private void OnBallLose(GameObject go)
     {
         Debug.Log("OnBallLose " + go);
+        ResetRound(go);
+    }
+
+    private void OnBallWin(GameObject go)
+    {
+        Debug.Log("OnBallWin " + go);
+        ResetRound(go);
+    }
+
+
+    void ResetRound(GameObject go)
+    {
         TennisBall ball = go.GetComponent<TennisBall>();
         GameObject lastHitter = ball.LastHitter;
-
+        Debug.Log("ResetRound " + lastHitter);
         ball.Stop();
 
         // find out who lost
@@ -39,33 +51,15 @@ public class TennisManager : MonoBehaviour
         {
             PlayerWin(go);
         }
-
     }
 
-    private void OnBallWin(GameObject go)
-    {
-        Debug.Log("OnBallWin " + go);
-        TennisBall ball = go.GetComponent<TennisBall>();
-        GameObject lastHitter = ball.LastHitter;
-
-        ball.Stop();
-
-        // find out who won
-        if (Array.IndexOf(enemies, lastHitter) != -1)
-        {
-            PlayerLose(go);
-        }
-        else if (Array.IndexOf(players, lastHitter) != -1)
-        {
-            PlayerWin(go);
-        }
-    }
 
     private void PlayerWin(GameObject go)
     {
         Debug.Log("[MANAGER] Player WON");
         playerScore.Value += scorePerPoint;
         go.transform.position = winBallStart.position;
+        Debug.Log("ball at winBallStart");
     }
 
     private void PlayerLose(GameObject go)
@@ -73,6 +67,7 @@ public class TennisManager : MonoBehaviour
         Debug.Log("[MANAGER] Enemy WON");
         enemyScore.Value += scorePerPoint;
         go.transform.position = loseBallStart.position;
+        Debug.Log("ball at loseBallStart");
     }
 
     private void OnDestroy()

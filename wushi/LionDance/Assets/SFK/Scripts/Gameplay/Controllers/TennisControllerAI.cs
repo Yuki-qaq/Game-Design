@@ -116,7 +116,8 @@ public class TennisControllerAI : MonoBehaviour
     {
         float dt = Time.fixedDeltaTime;
         Vector3 currentPos = body.position;
-
-        body.MovePosition(currentPos + dt * speed * Vector3.ClampMagnitude(targetPosition - currentPos, 1));
+        var dir = targetPosition - currentPos;
+        actions.animator.SetBool("walk", dir.magnitude > 0.1f);
+        body.MovePosition(currentPos + dt * speed * Vector3.ClampMagnitude(dir, 1));
     }
 }

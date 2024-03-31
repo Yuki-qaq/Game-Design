@@ -25,7 +25,7 @@ public class TennisBall : Ball
     {
 
         Collider collider = collision.collider;
-
+        Debug.Log("[Ball col] bounces " + bounces + " side " + CurrentSide);
         if (CurrentSide == HitterSide)
         {
             Debug.Log("[Ball] last hitter loses for bouncing the ball on their side of the court");

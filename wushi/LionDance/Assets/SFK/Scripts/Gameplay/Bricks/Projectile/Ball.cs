@@ -14,7 +14,7 @@ public class Ball : Projectile
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-
+        Debug.Log("bounces++");
         bounces++;
         BounceEvent?.Invoke(bounces);
     }
