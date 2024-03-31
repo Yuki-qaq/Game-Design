@@ -36,10 +36,9 @@ public class TennisActions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter " + other.gameObject);
         if (other.CompareTag(BALL_TAG))
         {
-            Debug.Log("hit ball!");
+            Debug.Log("hit ball! " + other.gameObject);
             TennisBall b = other.GetComponent<TennisBall>();
             //b.Hit((1 - UpForce) * HitForce * AimDirection + HitForce * UpForce * Vector3.up, gameObject);
             CalculateForce(b.transform);
@@ -65,13 +64,21 @@ public class TennisActions : MonoBehaviour
         if (source == null)
             source = transform;
 
+        if (HitAngle <= 0)
+            HitAngle = liftAngle;
         //Vector3 p = AimPosition;
         if (!isOpponent)
             AimPosition = GetSimulatedGoodAimPos();
+        else
+        {
+            var aca = GetComponent<AimControlAI>();
+            Vector3 pos = new(Random.Range(aca.minShootPos.x, aca.maxShootPos.x), 0, Random.Range(aca.minShootPos.y, aca.maxShootPos.y));
+            AimPosition = pos;
+        }
+        Debug.Log("AimPosition " + AimPosition);
         float gravity = Physics.gravity.magnitude;
         // Selected angle in radians
         float angle = HitAngle * Mathf.Deg2Rad;
-
         // Positions of this object and the target on the same plane
         Vector3 planarTarget = AimPosition; //new Vector3(p.x, 0, p.z);
         Vector3 planarPostion = new Vector3(source.position.x, 0, source.position.z);
@@ -82,7 +89,7 @@ public class TennisActions : MonoBehaviour
         float yOffset = source.position.y;// - p.y;
 
         float initialVelocity = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
-
+        Debug.Log("angle " + angle);
         Vector3 velocity = new Vector3(0, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
 
         // Rotate our velocity to match the direction between the two objects
@@ -122,7 +129,10 @@ public class TennisActions : MonoBehaviour
             return;
 
         if (isOpponent)
+        {
             animator.SetTrigger("hit");
+        }
+
         else
             PlayerBehaviour.instance.hit.TryHit();
 

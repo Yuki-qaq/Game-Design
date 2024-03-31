@@ -39,7 +39,7 @@ public class TennisManager : MonoBehaviour
     {
         TennisBall ball = go.GetComponent<TennisBall>();
         GameObject lastHitter = ball.LastHitter;
-        Debug.Log("ResetRound " + lastHitter);
+        Debug.Log("ResetRound isHitterWin " + isHitterWin + " lastHitter " + lastHitter);
         ball.Stop();
 
         if (isHitterWin)

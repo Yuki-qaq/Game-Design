@@ -11017,7 +11017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258911970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.46, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 2.8055615, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15093,6 +15093,7 @@ GameObject:
   - component: {fileID: 507953088}
   - component: {fileID: 507953087}
   - component: {fileID: 507953089}
+  - component: {fileID: 507953090}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -15173,7 +15174,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507953085}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dea808a3fa00a5d44b50a90387dc0247, type: 3}
   m_Name: 
@@ -15186,6 +15187,19 @@ MonoBehaviour:
   rotationVariable: {fileID: 11400000, guid: 066830b488320f647b29c82a0322d148, type: 2}
   localScale: 1
   scaleVariable: {fileID: 0}
+--- !u!114 &507953090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507953085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66cabbe88869dbb48bc4ee01f77d336f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6722344437885010555}
 --- !u!1 &511030119
 GameObject:
   m_ObjectHideFlags: 0
@@ -24598,7 +24612,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.25
+      scalar: 0.2
       minScalar: 0.05
       maxCurve:
         serializedVersion: 2
@@ -25180,7 +25194,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -29061,8 +29075,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947552348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41, y: 10, z: 9.58}
-  m_LocalScale: {x: 1.99, y: 1, z: 1.99}
+  m_LocalPosition: {x: -0.41, y: 9.5, z: 5.4}
+  m_LocalScale: {x: 1.99, y: 1, z: 2.578841}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -34411,7 +34425,7 @@ Transform:
   m_GameObject: {fileID: 1224795551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5.6, z: 0}
-  m_LocalScale: {x: 52.282444, y: 1.6153015, z: 52.947693}
+  m_LocalScale: {x: 98.31713, y: 1.6153015, z: 181.86473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1579496707}
@@ -34901,6 +34915,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4728029278890771627, guid: c3919d569f0f8a34880eb8f2b2c9ec22, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728029278890771627, guid: c3919d569f0f8a34880eb8f2b2c9ec22, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.26
       objectReference: {fileID: 0}
@@ -34910,7 +34928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4728029278890771627, guid: c3919d569f0f8a34880eb8f2b2c9ec22, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4728029278890771627, guid: c3919d569f0f8a34880eb8f2b2c9ec22, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77010,12 +77028,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   swingForceRandom: 0
-  swingAngle: 58
+  swingAngle: 54
   swingVariance: 5
   swingDuration: 0.5
   liftForceRandom: 0
-  liftAngle: 58
-  liftVariance: 8
+  liftAngle: 54
+  liftVariance: 5
   liftDuration: 1
   ShootReadyEvent:
     m_PersistentCalls:
@@ -77888,12 +77906,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 633284387}
   swingForceRandom: 0.5
-  swingAngle: 58
+  swingAngle: 54
   swingVariance: 5
   swingDuration: 1.3
   liftForceRandom: 1
-  liftAngle: 58
-  liftVariance: 8
+  liftAngle: 54
+  liftVariance: 5
   liftDuration: 1.6
   ShootReadyEvent:
     m_PersistentCalls:
@@ -78669,6 +78687,46 @@ PrefabInstance:
     - target: {fileID: 8207320372273233472, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207320372273233475, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_text
+      value: 'Me:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207320372273233475, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.9307894
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207320372273233475, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207320372273233475, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5812863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207320372273233475, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4293784468
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262167966084464885, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_text
+      value: 'Opponent:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262167966084464885, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5812863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262167966084464885, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.5812863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262167966084464885, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262167966084464885, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287927539
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ec1b6789b60ad40a761d8d457d9a50, type: 3}
