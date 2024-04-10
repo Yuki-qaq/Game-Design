@@ -16,44 +16,54 @@ public class CrosshairRaycastChecker : MonoBehaviour
         if (Physics.Raycast(rayStart, direction, out ray, dist, checkLayer))
         {
             //Debug.Log(ray.collider);
-            if (ray.collider != null)
+            var crct = ray.collider.GetComponent<CrosshairRaycastCheckTarget>();
+            if (crct != null)
             {
-                var crct = ray.collider.GetComponent<CrosshairRaycastCheckTarget>();
-                if (crct != null)
+                if (_crtCrct == null)
                 {
-                    if (_crtCrct == null)
-                    {
-                        _crtCrct = crct;
-                        crct.OnEnter();
-                        //new crct entered!
-                    }
-                    else if (_crtCrct == crct)
-                    {
-                        //same crct
-                        //should do nothing
-                    }
-                    else
-                    {
-                        _crtCrct.OnExit();
-                        _crtCrct = crct;
-                        crct.OnEnter();
-                        //another crct
-                        //accept the new one!
-                    }
+                    _crtCrct = crct;
+                    crct.OnEnter();
+                    //new crct entered!
+                }
+                else if (_crtCrct == crct)
+                {
+                    //same crct
+                    //should do nothing
                 }
                 else
                 {
-                    if (_crtCrct == null)
-                    {
-                        //should do nothing
-                    }
-                    else
-                    {
-                        _crtCrct.OnExit();
-                        _crtCrct = null;
-                        //exit the current one!
-                    }
+                    _crtCrct.OnExit();
+                    _crtCrct = crct;
+                    crct.OnEnter();
+                    //another crct
+                    //accept the new one!
                 }
+            }
+            else
+            {
+                if (_crtCrct == null)
+                {
+                    //should do nothing
+                }
+                else
+                {
+                    _crtCrct.OnExit();
+                    _crtCrct = null;
+                    //exit the current one!
+                }
+            }
+        }
+        else
+        {
+            if (_crtCrct == null)
+            {
+                //should do nothing
+            }
+            else
+            {
+                _crtCrct.OnExit();
+                _crtCrct = null;
+                //exit the current one!
             }
         }
     }
