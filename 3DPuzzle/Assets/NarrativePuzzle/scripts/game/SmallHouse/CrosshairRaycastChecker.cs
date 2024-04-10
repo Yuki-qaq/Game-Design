@@ -5,6 +5,7 @@ public class CrosshairRaycastChecker : MonoBehaviour
 
     public LayerMask checkLayer;
     private CrosshairRaycastCheckTarget _crtCrct;
+    public float dist = 1.5f;
 
     public void Update()
     {
@@ -12,9 +13,9 @@ public class CrosshairRaycastChecker : MonoBehaviour
         Vector3 direction = transform.forward;
         //Vector3 origin, Vector3 direction, out RaycastHit hitInfo, float maxDistance, int layerMask,
         RaycastHit ray;
-        if (Physics.Raycast(rayStart, direction, out ray, 3, checkLayer))
+        if (Physics.Raycast(rayStart, direction, out ray, dist, checkLayer))
         {
-            Debug.Log(ray.collider);
+            //Debug.Log(ray.collider);
             if (ray.collider != null)
             {
                 var crct = ray.collider.GetComponent<CrosshairRaycastCheckTarget>();

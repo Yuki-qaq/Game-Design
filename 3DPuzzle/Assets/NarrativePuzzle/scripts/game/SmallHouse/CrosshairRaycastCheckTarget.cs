@@ -7,13 +7,13 @@ public class CrosshairRaycastCheckTarget : MonoBehaviour
 
     public void OnEnter()
     {
-        Debug.Log(gameObject.name + " CrosshairRaycastCheckTarget OnEnter");
+        Debug.Log(gameObject.name + " CrosshairRct OnEnter");
         evt?.Invoke(true);
     }
 
     public void OnExit()
     {
-        Debug.Log(gameObject.name + " CrosshairRaycastCheckTarget OnExit");
+        Debug.Log(gameObject.name + " CrosshairRct OnExit");
         evt?.Invoke(false);
     }
 }
