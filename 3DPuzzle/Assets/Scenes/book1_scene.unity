@@ -10597,6 +10597,8 @@ MonoBehaviour:
   _target: {fileID: 1912060013}
   duration: 5
   bookSceneSwitcher: {fileID: 841858260}
+  toDisactives:
+  - {fileID: 1959036178}
 --- !u!4 &1884676509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4258063920058960, guid: 573024cb92efa8e48b8714c38f39cc19, type: 3}

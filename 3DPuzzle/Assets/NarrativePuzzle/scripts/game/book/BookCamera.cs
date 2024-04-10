@@ -8,6 +8,8 @@ public class BookCamera : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private float duration;
     [SerializeField] private BookSceneSwitcher bookSceneSwitcher;
+    [SerializeField] private GameObject[] toDisactives;
+
 
     private void Start()
     {
@@ -24,6 +26,9 @@ public class BookCamera : MonoBehaviour
 
     public void FocusOnTargetPage()
     {
+        foreach (var t in toDisactives)
+            t.SetActive(false);
+
         transform.DOKill();
         transform.DOMove(_target.position, duration).SetEase(Ease.InOutCubic).SetDelay(0.7f);
         transform.DORotateQuaternion(_target.rotation, duration).SetEase(Ease.InOutCubic).SetDelay(1.5f).OnComplete(
