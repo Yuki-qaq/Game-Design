@@ -36430,12 +36430,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9792c8338c9e96b44b8e8cdf12ef9a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1332767520}
   puzzleCamera: {fileID: 932223586}
   endBook: {fileID: 1340553085}
   hud_enterPuzzle: {fileID: 1501834393}
   hud_enterEndBook: {fileID: 1922631861}
   durationTransitCamera: 4
+  fpc: {fileID: 1582884594}
 --- !u!1 &918924243
 GameObject:
   m_ObjectHideFlags: 0
@@ -39405,6 +39406,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4863549634787430, guid: 04fb1161a540e7d4486270d7b1d9e4e8, type: 3}
   m_PrefabInstance: {fileID: 1512561190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1332767520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4459864851310106429, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1400212268}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1334361966
 GameObject:
@@ -55740,6 +55746,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 1400212268}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1582884594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1400212268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582884593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1587961709
 PrefabInstance:
   m_ObjectHideFlags: 0
