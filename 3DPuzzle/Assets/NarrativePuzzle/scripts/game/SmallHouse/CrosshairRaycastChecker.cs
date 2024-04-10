@@ -17,28 +17,41 @@ public class CrosshairRaycastChecker : MonoBehaviour
             Debug.Log(ray.collider);
             if (ray.collider != null)
             {
-                Debug.Log("shoot hit!");
                 var crct = ray.collider.GetComponent<CrosshairRaycastCheckTarget>();
                 if (crct != null)
                 {
-                    if (_crtCrct==null)
+                    if (_crtCrct == null)
                     {
+                        _crtCrct = crct;
+                        crct.OnEnter();
                         //new crct entered!
-                    }else if (_crtCrct==crct)
+                    }
+                    else if (_crtCrct == crct)
                     {
                         //same crct
+                        //should do nothing
                     }
                     else
                     {
+                        _crtCrct.OnExit();
+                        _crtCrct = crct;
+                        crct.OnEnter();
                         //another crct
                         //accept the new one!
                     }
-                    _crtCrct=crct;
-                    crct.OnEnter();
                 }
                 else
                 {
-
+                    if (_crtCrct == null)
+                    {
+                        //should do nothing
+                    }
+                    else
+                    {
+                        _crtCrct.OnExit();
+                        _crtCrct = null;
+                        //exit the current one!
+                    }
                 }
             }
         }
