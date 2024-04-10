@@ -9,12 +9,12 @@ public class DraggableBook : MonoBehaviour
     public int[] idealOrderReplacement;
     public string finalString = "<size=150%>Y</size>";
     private ParticleSystem _ps;
-    private TextMeshProUGUI _text;
+    private TextMeshPro _text;
 
     private void Start()
     {
         _ps = GetComponentInChildren<ParticleSystem>();
-        _text = GetComponentInChildren<TextMeshProUGUI>();
+        _text = GetComponentInChildren<TextMeshPro>();
         if (_ps is null)
             Debug.Log("DraggableBook no ps");
         if (_text is null)
