@@ -3054,7 +3054,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287197479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -3062,6 +3062,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>N</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &301395962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,7 +3988,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387589809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -3992,6 +3996,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>D</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &391252476
 GameObject:
   m_ObjectHideFlags: 0
@@ -13875,7 +13883,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433636522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -13883,6 +13891,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>K</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &462911344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4422004314472134, guid: cd5e93cad96f14141a419bb2d5e9cd47, type: 3}
@@ -19450,7 +19462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534508562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -19458,6 +19470,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>E</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &539924014
 GameObject:
   m_ObjectHideFlags: 0
@@ -19607,7 +19623,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540688423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -19615,6 +19631,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>R</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &543678578
 GameObject:
   m_ObjectHideFlags: 0
@@ -35745,7 +35765,7 @@ Transform:
   m_GameObject: {fileID: 818044579}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.525, y: 1.284, z: -101.325}
+  m_LocalPosition: {x: -1.525, y: 1.013, z: -101.325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35761,7 +35781,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818044579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -35769,6 +35789,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>I</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &825062023
 GameObject:
   m_ObjectHideFlags: 0
@@ -36132,7 +36156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858850576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -36140,6 +36164,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>U</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &861365864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36514,6 +36542,20 @@ MonoBehaviour:
   hud_enterEndBook: {fileID: 1922631861}
   durationTransitCamera: 4
   fpc: {fileID: 1582884594}
+  bookShelfHeightDelta: 0.27
+  books:
+  - {fileID: 1611999494}
+  - {fileID: 858850578}
+  - {fileID: 433636524}
+  - {fileID: 1438470583}
+  - {fileID: 1660633204}
+  - {fileID: 540688425}
+  - {fileID: 2080854165}
+  - {fileID: 534508564}
+  - {fileID: 287197481}
+  - {fileID: 387589811}
+  dragThresholdY: 0.2
+  dragThresholdX: 0.2
 --- !u!1 &890187790
 GameObject:
   m_ObjectHideFlags: 0
@@ -37983,7 +38025,7 @@ Transform:
   m_GameObject: {fileID: 1079896120}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.454, y: 1.284, z: -101.325}
+  m_LocalPosition: {x: -1.454, y: 1.013, z: -101.325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37999,7 +38041,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079896120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -38007,6 +38049,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>S</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1091174463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433570851389872, guid: cdac75eb801732941b8a935950b144aa, type: 3}
@@ -45196,7 +45242,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438470581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -45204,6 +45250,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>I</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1440475360
 GameObject:
   m_ObjectHideFlags: 0
@@ -56263,7 +56313,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611999492}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -56271,6 +56321,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>Y</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1615955653
 GameObject:
   m_ObjectHideFlags: 0
@@ -61430,7 +61484,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660633202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -61438,6 +61492,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>F</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1670742337
 GameObject:
   m_ObjectHideFlags: 0
@@ -79315,7 +79373,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080854163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1394dbb1a2cc3004b90133ff08bedf42, type: 3}
   m_Name: 
@@ -79323,6 +79381,10 @@ MonoBehaviour:
   idealOrder: 0
   idealOrderReplacement: 
   finalString: <size=150%>I</size>
+  dist: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &2081882644
 PrefabInstance:
   m_ObjectHideFlags: 0

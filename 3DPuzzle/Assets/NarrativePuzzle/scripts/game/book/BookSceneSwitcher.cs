@@ -20,6 +20,8 @@ public class BookSceneSwitcher : MonoBehaviour
                 cg.DOFade(0, duration);
             }
             );
+
+        SmallHouseBehaviour.instance.InitBooks();
     }
 
 }
