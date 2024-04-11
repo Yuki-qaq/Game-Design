@@ -12,6 +12,7 @@ public class DraggableBook : MonoBehaviour
     private TextMeshPro _text;
 
     private bool _isDragging;
+    private Collider _innerCol;
 
     public Vector3 startPos { get; private set; }
 
@@ -19,6 +20,7 @@ public class DraggableBook : MonoBehaviour
     {
         _ps = GetComponentInChildren<ParticleSystem>();
         _text = GetComponentInChildren<TextMeshPro>();
+        _innerCol = GetComponentInChildren<Collider>();
         if (_ps is null)
             Debug.Log("DraggableBook no ps");
         if (_text is null)
@@ -30,12 +32,14 @@ public class DraggableBook : MonoBehaviour
 
     public void StartDrag()
     {
+        Debug.Log("StartDrag");
         _isDragging = true;
         _ps.Play();
     }
 
     public void EndDrag()
     {
+        Debug.Log("EndDrag");
         Vector3 attachPos;
         bool isFinal;
         SmallHouseBehaviour.instance.GetBookEndDragRes(this, out isFinal, out attachPos);
@@ -65,7 +69,7 @@ public class DraggableBook : MonoBehaviour
                 // Perform the raycast
                 if (Physics.Raycast(ray, out hit, dist, layerMask))
                 {
-                    if (hit.transform.gameObject == this.gameObject)
+                    if (hit.transform.gameObject == _innerCol.gameObject)
                     {
                         StartDrag();
                     }

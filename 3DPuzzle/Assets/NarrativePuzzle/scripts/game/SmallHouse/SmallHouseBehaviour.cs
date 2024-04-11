@@ -52,14 +52,14 @@ public class SmallHouseBehaviour : MonoBehaviour
         i = 0;
         foreach (var book in books)
         {
-            book.gameObject.transform.position = _slots[i];
+            book.gameObject.transform.position = _slots[i] + new Vector3(0, bookShelfHeightDelta, 0);
             i++;
         }
     }
 
     int SortRandom<T>(T a, T b)
     {
-        return Random.value < 0.5 ? 1 : -1;
+        return (Random.value < 0.5) ? 1 : -1;
     }
 
     public void GetBookEndDragRes(DraggableBook book, out bool isFinal, out Vector3 endPos)

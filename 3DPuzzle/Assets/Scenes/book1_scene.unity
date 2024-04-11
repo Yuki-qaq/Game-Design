@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 93736068}
   - component: {fileID: 93736070}
   - component: {fileID: 93736069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 142354027}
   - component: {fileID: 142354029}
   - component: {fileID: 142354028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1427,7 @@ GameObject:
   - component: {fileID: 155084437}
   - component: {fileID: 155084439}
   - component: {fileID: 155084438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2089,7 +2089,7 @@ GameObject:
   - component: {fileID: 245944025}
   - component: {fileID: 245944027}
   - component: {fileID: 245944026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2677,7 +2677,7 @@ GameObject:
   - component: {fileID: 278853603}
   - component: {fileID: 278853605}
   - component: {fileID: 278853604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2854,7 +2854,7 @@ GameObject:
   - component: {fileID: 280104822}
   - component: {fileID: 280104821}
   - component: {fileID: 280104820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3022,7 +3022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 287197480}
   - component: {fileID: 287197481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3065,7 +3065,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &301395962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,7 +3616,7 @@ GameObject:
   - component: {fileID: 362904380}
   - component: {fileID: 362904382}
   - component: {fileID: 362904381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3956,7 +3956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 387589810}
   - component: {fileID: 387589811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3999,7 +3999,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &391252476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4011,7 +4011,7 @@ GameObject:
   - component: {fileID: 391252477}
   - component: {fileID: 391252479}
   - component: {fileID: 391252478}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8903,7 +8903,7 @@ GameObject:
   - component: {fileID: 403202676}
   - component: {fileID: 403202678}
   - component: {fileID: 403202677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13851,7 +13851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433636523}
   - component: {fileID: 433636524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13894,7 +13894,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!4 &462911344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4422004314472134, guid: cd5e93cad96f14141a419bb2d5e9cd47, type: 3}
@@ -14336,7 +14336,7 @@ GameObject:
   - component: {fileID: 521307496}
   - component: {fileID: 521307498}
   - component: {fileID: 521307497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19327,7 +19327,7 @@ GameObject:
   - component: {fileID: 527527087}
   - component: {fileID: 527527086}
   - component: {fileID: 527527085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19430,7 +19430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534508563}
   - component: {fileID: 534508564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19473,7 +19473,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &539924014
 GameObject:
   m_ObjectHideFlags: 0
@@ -19591,7 +19591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540688424}
   - component: {fileID: 540688425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19634,7 +19634,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &543678578
 GameObject:
   m_ObjectHideFlags: 0
@@ -19683,7 +19683,7 @@ GameObject:
   - component: {fileID: 548193462}
   - component: {fileID: 548193464}
   - component: {fileID: 548193463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25072,7 +25072,7 @@ GameObject:
   - component: {fileID: 639311329}
   - component: {fileID: 639311331}
   - component: {fileID: 639311330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29903,7 +29903,7 @@ GameObject:
   - component: {fileID: 643239649}
   - component: {fileID: 643239648}
   - component: {fileID: 643239647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30595,7 +30595,7 @@ GameObject:
   - component: {fileID: 762123766}
   - component: {fileID: 762123768}
   - component: {fileID: 762123767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35749,7 +35749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818044580}
   - component: {fileID: 818044581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35792,7 +35792,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &825062023
 GameObject:
   m_ObjectHideFlags: 0
@@ -36124,7 +36124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858850577}
   - component: {fileID: 858850578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36167,7 +36167,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1001 &861365864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36540,7 +36540,7 @@ MonoBehaviour:
   endBook: {fileID: 1648582820071975}
   hud_enterPuzzle: {fileID: 1501834393}
   hud_enterEndBook: {fileID: 1922631861}
-  durationTransitCamera: 4
+  durationTransitCamera: 3
   fpc: {fileID: 1582884594}
   bookShelfHeightDelta: 0.27
   books:
@@ -36963,7 +36963,7 @@ GameObject:
   - component: {fileID: 941544618}
   - component: {fileID: 941544620}
   - component: {fileID: 941544619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37459,7 +37459,7 @@ GameObject:
   - component: {fileID: 1018970217}
   - component: {fileID: 1018970216}
   - component: {fileID: 1018970215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37724,7 +37724,7 @@ GameObject:
   - component: {fileID: 1054645349}
   - component: {fileID: 1054645351}
   - component: {fileID: 1054645350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38009,7 +38009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079896121}
   - component: {fileID: 1079896122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38047,12 +38047,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idealOrder: 0
-  idealOrderReplacement: 
+  idealOrderReplacement: 03000000
   finalString: <size=150%>S</size>
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!4 &1091174463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433570851389872, guid: cdac75eb801732941b8a935950b144aa, type: 3}
@@ -38825,7 +38825,7 @@ GameObject:
   - component: {fileID: 1209860615}
   - component: {fileID: 1209860614}
   - component: {fileID: 1209860613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39814,7 +39814,7 @@ GameObject:
   - component: {fileID: 1369306647}
   - component: {fileID: 1369306649}
   - component: {fileID: 1369306648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44644,7 +44644,7 @@ GameObject:
   - component: {fileID: 1370014485}
   - component: {fileID: 1370014487}
   - component: {fileID: 1370014486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45210,7 +45210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438470582}
   - component: {fileID: 1438470583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45248,12 +45248,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idealOrder: 0
-  idealOrderReplacement: 
+  idealOrderReplacement: 06000000
   finalString: <size=150%>I</size>
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1440475360
 GameObject:
   m_ObjectHideFlags: 0
@@ -45533,7 +45533,7 @@ GameObject:
   - component: {fileID: 1450942681}
   - component: {fileID: 1450942683}
   - component: {fileID: 1450942682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50369,7 +50369,7 @@ GameObject:
   - component: {fileID: 1475856927}
   - component: {fileID: 1475856926}
   - component: {fileID: 1475856925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50648,7 +50648,7 @@ GameObject:
   - component: {fileID: 1511385550}
   - component: {fileID: 1511385552}
   - component: {fileID: 1511385551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56281,7 +56281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611999493}
   - component: {fileID: 1611999494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56324,7 +56324,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1615955653
 GameObject:
   m_ObjectHideFlags: 0
@@ -56504,7 +56504,7 @@ GameObject:
   - component: {fileID: 1636617645}
   - component: {fileID: 1636617647}
   - component: {fileID: 1636617646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61452,7 +61452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660633203}
   - component: {fileID: 1660633204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61495,7 +61495,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1670742337
 GameObject:
   m_ObjectHideFlags: 0
@@ -61539,7 +61539,7 @@ GameObject:
   - component: {fileID: 1671955598}
   - component: {fileID: 1671955600}
   - component: {fileID: 1671955599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61757,7 +61757,7 @@ GameObject:
   - component: {fileID: 1727995775}
   - component: {fileID: 1727995774}
   - component: {fileID: 1727995773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61930,7 +61930,7 @@ GameObject:
   - component: {fileID: 1750748137}
   - component: {fileID: 1750748139}
   - component: {fileID: 1750748138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67364,7 +67364,7 @@ GameObject:
   - component: {fileID: 1833939911}
   - component: {fileID: 1833939913}
   - component: {fileID: 1833939912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72293,7 +72293,7 @@ GameObject:
   - component: {fileID: 1866856049}
   - component: {fileID: 1866856051}
   - component: {fileID: 1866856050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72863,7 +72863,7 @@ GameObject:
   - component: {fileID: 1896204849}
   - component: {fileID: 1896204848}
   - component: {fileID: 1896204847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73412,7 +73412,7 @@ GameObject:
   - component: {fileID: 1938100891}
   - component: {fileID: 1938100890}
   - component: {fileID: 1938100889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78693,7 +78693,7 @@ GameObject:
   - component: {fileID: 2007509739}
   - component: {fileID: 2007509738}
   - component: {fileID: 2007509737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78803,7 +78803,7 @@ GameObject:
   - component: {fileID: 2015217813}
   - component: {fileID: 2015217812}
   - component: {fileID: 2015217811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78912,7 +78912,7 @@ GameObject:
   - component: {fileID: 2018804096}
   - component: {fileID: 2018804098}
   - component: {fileID: 2018804097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79341,7 +79341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080854164}
   - component: {fileID: 2080854165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: book (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79384,7 +79384,7 @@ MonoBehaviour:
   dist: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1001 &2081882644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79475,7 +79475,7 @@ GameObject:
   - component: {fileID: 2087702979}
   - component: {fileID: 2087702978}
   - component: {fileID: 2087702977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
