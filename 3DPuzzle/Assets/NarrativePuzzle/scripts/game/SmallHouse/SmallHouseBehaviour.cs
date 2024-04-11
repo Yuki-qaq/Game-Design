@@ -34,6 +34,7 @@ public class SmallHouseBehaviour : MonoBehaviour
     public void EnterPuzzle()
     {
         Debug.Log("EnterPuzzle ");
+        Cursor.lockState = CursorLockMode.None;
         mainCamera.SetParent(null);
         //off player camera follow
         //off player control
@@ -50,10 +51,15 @@ public class SmallHouseBehaviour : MonoBehaviour
         mainCamera.localPosition = Vector3.zero;
         mainCamera.localEulerAngles = Vector3.zero;
         fpc.enabled = true;
-
+        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("OnPuzzleEnd ");
         endBook.SetActive(true);
         //show some chat
         //play sound
+    }
+
+    public void EnterBook()
+    {
+        Debug.Log("EnterBook ");
     }
 }

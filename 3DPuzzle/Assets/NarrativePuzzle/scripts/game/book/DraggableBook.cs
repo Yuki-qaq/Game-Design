@@ -34,24 +34,4 @@ public class DraggableBook : MonoBehaviour
             _text.text = finalString;
         }
     }
-
-    private void OnMouseUp()
-    {
-        Debug.Log("OnMouseUp");
-    }
-
-    private void OnMouseDrag()
-    {
-        Debug.Log("OnMouseDrag");
-    }
-
-    private void OnMouseDown()
-    {
-        Debug.Log("OnMouseDown");
-    }
-
-    private void OnMouseExit()
-    {
-        Debug.Log("OnMouseExit");
-    }
 }
