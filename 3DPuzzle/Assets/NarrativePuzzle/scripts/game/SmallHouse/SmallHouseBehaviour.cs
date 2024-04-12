@@ -1,5 +1,6 @@
 using com;
 using DG.Tweening;
+using echo17.EndlessBook;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -225,8 +226,12 @@ public class SmallHouseBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    [SerializeField] private EndlessBook book2;
+    [SerializeField] private Camera book2Cam;
+
     public void EnterBook()
     {
         Debug.Log("EnterBook ");
+        BookController.instance.SwitchBook(book2Cam, book2);
     }
 }

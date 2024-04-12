@@ -19,6 +19,8 @@ using echo17.EndlessBook.Demo02;
 /// </summary>
 public class BookController : MonoBehaviour
 {
+    public static BookController instance;
+
 
     /// <summary>
     /// Whether pages are being flipped
@@ -64,10 +66,12 @@ public class BookController : MonoBehaviour
     /// </summary>
     public PageView[] pageViews;
 
-    public void SwitchBook(Camera bookCam, EndlessBook newBook, EndlessBook oldBook)
+    public void SwitchBook(Camera bookCam, EndlessBook newBook)
     {
         Debug.Log("SwitchBook!");
-        oldBook.gameObject.SetActive(false);
+        if (book != null)
+            book.gameObject.SetActive(false);
+
         newBook.gameObject.SetActive(true);
         book = newBook;
         touchPad.mainCamera = bookCam;
@@ -75,6 +79,7 @@ public class BookController : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         // turn off all the mini-scenes since no pages are visible
         TurnOffAllPageViews();
 
