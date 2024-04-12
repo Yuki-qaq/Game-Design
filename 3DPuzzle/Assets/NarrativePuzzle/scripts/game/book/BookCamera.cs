@@ -10,7 +10,6 @@ public class BookCamera : MonoBehaviour
     [SerializeField] private BookSceneSwitcher bookSceneSwitcher;
     [SerializeField] private GameObject[] toDisactives;
 
-
     private void Start()
     {
         _startPos = transform.position;

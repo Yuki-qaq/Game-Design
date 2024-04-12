@@ -202,14 +202,14 @@ public class SmallHouseBehaviour : MonoBehaviour
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
-        float extraTime = 1.0f;
+        float extraTime = 1.1f;
         foreach (var b in booksFinalAnim)
         {
             b.enabled = true;
-            b.transform.DOShakeRotation(0.5f + extraTime, 3, 10);
-            yield return new WaitForSeconds(0.2f + extraTime);
+            b.transform.DOShakeRotation(0.5f + extraTime, 4, 10);
+            yield return new WaitForSeconds(0.4f + extraTime);
             b.SetToFinalString();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
             extraTime -= 0.4f;
             if (extraTime < 0)
                 extraTime = 0;
@@ -218,10 +218,9 @@ public class SmallHouseBehaviour : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         mainCamera.SetParent(_mainCamera_defaultParent);
+        mainCamera.localEulerAngles = Vector3.zero;
+        mainCamera.localPosition = Vector3.zero;
         mainCamera.DOKill();
-        mainCamera.DOLocalMove(Vector3.zero, durationTransitCamera).SetEase(Ease.InOutCubic);
-        mainCamera.DOLocalRotate(Vector3.zero, durationTransitCamera).SetEase(Ease.InOutCubic);
-        yield return new WaitForSeconds(durationTransitCamera + 0.1f);
         fpc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
     }

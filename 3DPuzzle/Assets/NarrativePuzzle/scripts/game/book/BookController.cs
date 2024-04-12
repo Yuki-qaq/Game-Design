@@ -64,6 +64,15 @@ public class BookController : MonoBehaviour
     /// </summary>
     public PageView[] pageViews;
 
+    public void SwitchBook(Camera bookCam, EndlessBook newBook, EndlessBook oldBook)
+    {
+        Debug.Log("SwitchBook!");
+        oldBook.gameObject.SetActive(false);
+        newBook.gameObject.SetActive(true);
+        book = newBook;
+        touchPad.mainCamera = bookCam;
+    }
+
     void Start()
     {
         // turn off all the mini-scenes since no pages are visible
