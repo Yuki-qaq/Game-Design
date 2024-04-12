@@ -202,12 +202,17 @@ public class SmallHouseBehaviour : MonoBehaviour
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
+        float extraTime = 1.0f;
         foreach (var b in booksFinalAnim)
         {
-            b.transform.DOShakeRotation(0.5f, 1, 8);
-            yield return new WaitForSeconds(0.35f);
+            b.enabled = true;
+            b.transform.DOShakeRotation(0.5f + extraTime, 3, 10);
+            yield return new WaitForSeconds(0.2f + extraTime);
             b.SetToFinalString();
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.3f);
+            extraTime -= 0.4f;
+            if (extraTime < 0)
+                extraTime = 0;
             //SoundSystem.instance.Play("note");
         }
 
