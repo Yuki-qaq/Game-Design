@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,8 +27,12 @@ public class DraggableBook : MonoBehaviour
         if (_text is null)
             Debug.Log("DraggableBook no _text");
 
-        startPos = transform.position;
         _isDragging = false;
+    }
+
+    public void Init()
+    {
+        startPos = transform.position;
     }
 
     public void StartDrag()
@@ -35,6 +40,9 @@ public class DraggableBook : MonoBehaviour
         Debug.Log("StartDrag");
         _isDragging = true;
         _ps.Play();
+
+        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        mOffset = gameObject.transform.position - GetMouseWorldPos();
     }
 
     public void EndDrag()
@@ -46,9 +54,30 @@ public class DraggableBook : MonoBehaviour
         _isDragging = false;
         _ps.Stop();
 
+        transform.DOKill();
+        transform.DOMove(attachPos, 0.6f).SetEase(Ease.OutCubic);
+
         if (isFinal)
         {
             _text.text = finalString;
+        }
+    }
+
+    private Vector3 mOffset;
+    private float mZCoord;
+
+    private Vector3 GetMouseWorldPos()
+    {
+        Vector3 mousePoint = Input.mousePosition;
+        mousePoint.z = mZCoord;
+        return Camera.main.ScreenToWorldPoint(mousePoint);
+    }
+
+    private void Update()
+    {
+        if (_isDragging)
+        {
+            transform.position = GetMouseWorldPos() + mOffset;
         }
     }
 
@@ -57,6 +86,9 @@ public class DraggableBook : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!SmallHouseBehaviour.instance.inPuzzle)
+            return;
+
         if (!_isDragging)
         {
             // Check if the left mouse button was clicked

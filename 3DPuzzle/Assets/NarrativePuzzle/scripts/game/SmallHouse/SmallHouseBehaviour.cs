@@ -2,6 +2,12 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class BookSlot
+{
+    public Vector3 pos;
+    public DraggableBook book;
+}
+
 public class SmallHouseBehaviour : MonoBehaviour
 {
     public static SmallHouseBehaviour instance;
@@ -17,9 +23,10 @@ public class SmallHouseBehaviour : MonoBehaviour
     public float bookShelfHeightDelta = 0.27f;
 
     public List<DraggableBook> books;
-    private List<Vector3> _slots = new List<Vector3>();
-    public float dragThresholdY;
-    public float dragThresholdX;
+    private List<BookSlot> _slots = new List<BookSlot>();
+    public float dragDistThreshold = 0.3f;
+
+    public bool inPuzzle { get; private set; }
 
     private void Awake()
     {
@@ -33,6 +40,7 @@ public class SmallHouseBehaviour : MonoBehaviour
         endBook.SetActive(false);
 
         _mainCamera_defaultParent = mainCamera.parent;
+        inPuzzle = false;
     }
 
     public void InitBooks()
@@ -42,9 +50,18 @@ public class SmallHouseBehaviour : MonoBehaviour
         foreach (var book in books)
         {
             book.idealOrder = i;
-            book.enabled = true;
+            //book.enabled = true;
             i++;
-            _slots.Add(book.gameObject.transform.position - new Vector3(0, bookShelfHeightDelta, 0));
+            BookSlot bookSlot = new BookSlot();
+            bookSlot.pos = book.gameObject.transform.position;
+            _slots.Add(bookSlot);
+        }
+
+        foreach (var book in books)
+        {
+            BookSlot bookSlot = new BookSlot();
+            bookSlot.pos = book.gameObject.transform.position - new Vector3(0, bookShelfHeightDelta, 0);
+            _slots.Add(bookSlot);
         }
 
         books.Sort(SortRandom);
@@ -52,7 +69,11 @@ public class SmallHouseBehaviour : MonoBehaviour
         i = 0;
         foreach (var book in books)
         {
-            book.gameObject.transform.position = _slots[i] + new Vector3(0, bookShelfHeightDelta, 0);
+            var slot = _slots[i];
+            book.gameObject.transform.position = slot.pos;
+            slot.book = book;
+
+            book.Init();
             i++;
         }
     }
@@ -65,7 +86,78 @@ public class SmallHouseBehaviour : MonoBehaviour
     public void GetBookEndDragRes(DraggableBook book, out bool isFinal, out Vector3 endPos)
     {
         isFinal = false;
-        endPos = book.startPos;
+        BookSlot crtSlot = null;
+        foreach (var ss in _slots)
+        {
+            if (ss.book == book)
+            {
+                crtSlot = ss;
+                break;
+            }
+        }
+
+        endPos = crtSlot.pos;
+
+        float distMax = 100;
+        BookSlot nearestBookSlot = null;
+        foreach (var s in _slots)
+        {
+            var dist = Vector3.Distance(s.pos, book.transform.position);
+            if (dist < distMax && dist < dragDistThreshold)
+            {
+                distMax = dist;
+                nearestBookSlot = s;
+            }
+        }
+
+        if (nearestBookSlot != null && nearestBookSlot.book == null)
+        {
+            //remove from old slot
+            Debug.Log("remove from old slot");
+            crtSlot.book = null;
+
+            nearestBookSlot.book = book;
+            Debug.Log("replace nearestBookSlot");
+            endPos = nearestBookSlot.pos;
+            isFinal = CheckFinalStrings(nearestBookSlot);
+        }
+    }
+
+    bool CheckFinalStrings(BookSlot bs)
+    {
+        int correctNum = 0;
+        for (int i = 10; i < 20; i++)
+        {
+            var slot = _slots[i];
+            if (slot.book == null)
+                return false;
+
+            int idealNum = i - 10;
+            //Debug.Log("i " + i + " ideaOrder " + slot.book.idealOrder);
+            if (idealNum == slot.book.idealOrder)
+            {
+                correctNum++;
+            }
+            else
+            {
+                foreach (var ir in slot.book.idealOrderReplacement)
+                {
+                    if (idealNum == ir)
+                    {
+                        correctNum++;
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log("CheckFinalStrings correctNum " + correctNum);
+        }
+
+        if (correctNum >= 10)
+        {
+            Debug.LogWarning("-> correct order!!!!");
+        }
+        return false;
     }
 
     public void ToggleWatchBookShelf(bool on)
@@ -90,6 +182,7 @@ public class SmallHouseBehaviour : MonoBehaviour
         fpc.enabled = false;
         mainCamera.DOMove(puzzleCamera.position, durationTransitCamera).SetEase(Ease.InOutCubic);
         mainCamera.DORotate(puzzleCamera.eulerAngles, durationTransitCamera).SetEase(Ease.InOutCubic);
+        inPuzzle = true;
     }
 
     public void OnPuzzleEnd()
@@ -103,6 +196,7 @@ public class SmallHouseBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("OnPuzzleEnd ");
         endBook.SetActive(true);
+        inPuzzle = false;
         //show some chat
         //play sound
     }
