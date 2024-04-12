@@ -39411,8 +39411,8 @@ MonoBehaviour:
   - {fileID: 534508564}
   - {fileID: 287197481}
   - {fileID: 387589811}
-  book2: {fileID: 0}
-  book2Cam: {fileID: 0}
+  book2: {fileID: 181053814}
+  book2Cam: {fileID: 1917675179}
 --- !u!1 &890187790
 GameObject:
   m_ObjectHideFlags: 0

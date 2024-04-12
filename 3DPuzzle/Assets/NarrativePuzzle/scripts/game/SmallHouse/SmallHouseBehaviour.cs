@@ -233,5 +233,6 @@ public class SmallHouseBehaviour : MonoBehaviour
     {
         Debug.Log("EnterBook ");
         BookController.instance.SwitchBook(book2Cam, book2);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

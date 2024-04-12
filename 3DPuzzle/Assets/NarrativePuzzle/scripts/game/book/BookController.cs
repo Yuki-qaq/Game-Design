@@ -75,6 +75,7 @@ public class BookController : MonoBehaviour
         newBook.gameObject.SetActive(true);
         book = newBook;
         touchPad.mainCamera = bookCam;
+        touchPad.gameObject.SetActive(true);
     }
 
     void Start()
