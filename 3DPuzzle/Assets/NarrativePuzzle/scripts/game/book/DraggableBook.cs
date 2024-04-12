@@ -56,11 +56,13 @@ public class DraggableBook : MonoBehaviour
 
         transform.DOKill();
         transform.DOMove(attachPos, 0.6f).SetEase(Ease.OutCubic);
-
         if (isFinal)
-        {
-            _text.text = finalString;
-        }
+            SmallHouseBehaviour.instance.OnPuzzleEnd();
+    }
+
+    public void SetToFinalString()
+    {
+        _text.text = finalString;
     }
 
     private Vector3 mOffset;

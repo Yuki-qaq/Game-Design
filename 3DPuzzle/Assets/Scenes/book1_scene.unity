@@ -36539,6 +36539,7 @@ MonoBehaviour:
   puzzleCamera: {fileID: 932223586}
   endBook: {fileID: 1648582820071975}
   hud_enterPuzzle: {fileID: 1501834393}
+  triggerCol_enterPuzzle: {fileID: 1442379340}
   hud_enterEndBook: {fileID: 1922631861}
   durationTransitCamera: 3
   fpc: {fileID: 1582884594}
@@ -36555,6 +36556,19 @@ MonoBehaviour:
   - {fileID: 287197481}
   - {fileID: 387589811}
   dragDistThreshold: 0.3
+  booksFinalAnim:
+  - {fileID: 1611999494}
+  - {fileID: 858850578}
+  - {fileID: 433636524}
+  - {fileID: 1438470583}
+  - {fileID: 818044581}
+  - {fileID: 1079896122}
+  - {fileID: 1660633204}
+  - {fileID: 540688425}
+  - {fileID: 2080854165}
+  - {fileID: 534508564}
+  - {fileID: 287197481}
+  - {fileID: 387589811}
 --- !u!1 &890187790
 GameObject:
   m_ObjectHideFlags: 0
