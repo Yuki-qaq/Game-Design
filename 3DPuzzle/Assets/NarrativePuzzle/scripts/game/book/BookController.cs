@@ -66,17 +66,6 @@ public class BookController : MonoBehaviour
     /// </summary>
     public PageView[] pageViews;
 
-    public void SwitchBook(Camera bookCam, EndlessBook newBook)
-    {
-        Debug.Log("SwitchBook!");
-        if (book != null)
-            book.gameObject.SetActive(false);
-
-        newBook.gameObject.SetActive(true);
-        book = newBook;
-        touchPad.mainCamera = bookCam;
-        touchPad.gameObject.SetActive(true);
-    }
 
     void Start()
     {
@@ -246,7 +235,7 @@ public class BookController : MonoBehaviour
         }
     }
 
-    [SerializeField] BookCamera _bookCamera;
+
     /// <summary>
     /// Handler for when a page stops turning.
     /// We toggle the page views for the mini-scenes off for the relevent pages
@@ -280,7 +269,46 @@ public class BookController : MonoBehaviour
         }
     }
 
+    [SerializeField] BookCamera _bookCamera;
+
+    [System.Serializable]
+    public class BookControlData
+    {
+        public PageToggleSceneData[] _pageToggleSceneData;
+        public Camera cam;
+        public EndlessBook book;
+    }
+    public BookControlData crtBookData { get; private set; }
+
+    public BookControlData[] bookDatas;
+
     [SerializeField] private PageToggleSceneData[] _pageToggleSceneData;
+
+      public void SwitchBook(BookControlData data)
+    {
+        crtBookData = data;
+        if (book != null)
+            book.gameObject.SetActive(false);
+
+        data.book.gameObject.SetActive(true);
+        book =  data.book;
+        touchPad.mainCamera =  data.cam;
+        touchPad.gameObject.SetActive(true);
+    }
+
+    public void SwitchBook(Camera bookCam, EndlessBook newBook)
+    {
+        Debug.Log("SwitchBook!");
+        if (book != null)
+            book.gameObject.SetActive(false);
+
+        newBook.gameObject.SetActive(true);
+        book = newBook;
+        touchPad.mainCamera = bookCam;
+        touchPad.gameObject.SetActive(true);
+    }
+
+
     /// <summary>
     /// Handles whether a mouse down was detected on the touchpad
     /// </summary>

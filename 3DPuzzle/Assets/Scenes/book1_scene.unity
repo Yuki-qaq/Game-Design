@@ -1919,8 +1919,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 39dc3f4f898610f4287793a9255b1f39, type: 2}
   - {fileID: 2100000, guid: ed1ad3f60426da9418e4ac26c133788e, type: 2}
   - {fileID: 2100000, guid: 8c50ee3390bceda45bd998157dc47e9d, type: 2}
-  - {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
-  - {fileID: 2100000, guid: 61a77c46318d0f543904413c366b516d, type: 2}
+  - {fileID: 2100000, guid: ee85f0f2249033b4a92fad4dd5a25d7c, type: 2}
+  - {fileID: 2100000, guid: bfd7187817660c0488785ec9aa425aef, type: 2}
   materialMappings:
   - materialType: 0
     mappings:
@@ -2002,11 +2002,11 @@ MonoBehaviour:
   - materialType: 7
     mappings: []
   pageData:
-  - material: {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
-  - material: {fileID: 2100000, guid: 61a77c46318d0f543904413c366b516d, type: 2}
-  - material: {fileID: 2100000, guid: fc2241260ac80c541ba5097e1d26291b, type: 2}
+  - material: {fileID: 2100000, guid: ee85f0f2249033b4a92fad4dd5a25d7c, type: 2}
+  - material: {fileID: 2100000, guid: bfd7187817660c0488785ec9aa425aef, type: 2}
+  - material: {fileID: 2100000, guid: 4228a7cd3655aca4cba2a0cb1a7a605d, type: 2}
   - material: {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
-  - material: {fileID: 2100000, guid: fc2241260ac80c541ba5097e1d26291b, type: 2}
+  - material: {fileID: 2100000, guid: a648605b68c337c46991649c6a1eb97b, type: 2}
   - material: {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
   pages:
   - {fileID: 983597093}
@@ -15084,8 +15084,8 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 39dc3f4f898610f4287793a9255b1f39, type: 2}
   - {fileID: 2100000, guid: ed1ad3f60426da9418e4ac26c133788e, type: 2}
-  - {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
-  - {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
+  - {fileID: 2100000, guid: bfd7187817660c0488785ec9aa425aef, type: 2}
+  - {fileID: 2100000, guid: ee85f0f2249033b4a92fad4dd5a25d7c, type: 2}
   - {fileID: 2100000, guid: 8c50ee3390bceda45bd998157dc47e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -26046,8 +26046,8 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 39dc3f4f898610f4287793a9255b1f39, type: 2}
   - {fileID: 2100000, guid: ed1ad3f60426da9418e4ac26c133788e, type: 2}
-  - {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
-  - {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
+  - {fileID: 2100000, guid: bfd7187817660c0488785ec9aa425aef, type: 2}
+  - {fileID: 2100000, guid: ee85f0f2249033b4a92fad4dd5a25d7c, type: 2}
   - {fileID: 2100000, guid: 8c50ee3390bceda45bd998157dc47e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -38624,6 +38624,7 @@ MonoBehaviour:
   touchPad: {fileID: 1959036179}
   pageViews: []
   _bookCamera: {fileID: 1878145032}
+  bookDatas: []
   _pageToggleSceneData:
   - page: 2
     toShow:
