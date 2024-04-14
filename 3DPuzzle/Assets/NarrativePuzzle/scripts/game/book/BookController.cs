@@ -80,6 +80,8 @@ public class BookController : MonoBehaviour
 
         // set the book closed
         OnBookStateChanged(EndlessBook.StateEnum.ClosedFront, EndlessBook.StateEnum.ClosedFront, -1);
+
+        SwitchBook(bookDatas[0]);
     }
 
     /// <summary>
@@ -171,7 +173,7 @@ public class BookController : MonoBehaviour
     {
         var pageView = GetPageView(pageNumber);
         Debug.Log("TogglePageView " + pageNumber + " on " + on);
-        foreach (var ptsd in _pageToggleSceneData)
+        foreach (var ptsd in crtBookData._pageToggleSceneData)
         {
             if (on && pageNumber == ptsd.page)
                 ptsd.On();
@@ -282,17 +284,15 @@ public class BookController : MonoBehaviour
 
     public BookControlData[] bookDatas;
 
-    [SerializeField] private PageToggleSceneData[] _pageToggleSceneData;
-
-      public void SwitchBook(BookControlData data)
+    public void SwitchBook(BookControlData data)
     {
         crtBookData = data;
         if (book != null)
             book.gameObject.SetActive(false);
 
         data.book.gameObject.SetActive(true);
-        book =  data.book;
-        touchPad.mainCamera =  data.cam;
+        book = data.book;
+        touchPad.mainCamera = data.cam;
         touchPad.gameObject.SetActive(true);
     }
 

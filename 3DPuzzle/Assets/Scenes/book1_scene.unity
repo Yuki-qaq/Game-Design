@@ -38595,7 +38595,6 @@ GameObject:
   m_Component:
   - component: {fileID: 841858259}
   - component: {fileID: 841858258}
-  - component: {fileID: 841858260}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -38624,38 +38623,46 @@ MonoBehaviour:
   touchPad: {fileID: 1959036179}
   pageViews: []
   _bookCamera: {fileID: 1878145032}
-  bookDatas: []
-  _pageToggleSceneData:
-  - page: 2
-    toShow:
-    - {fileID: 2055560527}
-    - {fileID: 1568531861}
-    toHide:
-    - {fileID: 1907505316}
-    evt:
-      m_PersistentCalls:
-        m_Calls: []
-  - page: 4
-    toShow:
-    - {fileID: 1907505316}
-    toHide:
-    - {fileID: 1568531861}
-    - {fileID: 2055560527}
-    evt:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1878145032}
-          m_TargetAssemblyTypeName: BookCamera, Assembly-CSharp
-          m_MethodName: FocusOnTargetPage
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  bookDatas:
+  - _pageToggleSceneData:
+    - page: 2
+      toShow:
+      - {fileID: 2055560527}
+      - {fileID: 1568531861}
+      toHide:
+      - {fileID: 1907505316}
+      evt:
+        m_PersistentCalls:
+          m_Calls: []
+    - page: 4
+      toShow:
+      - {fileID: 1907505316}
+      toHide:
+      - {fileID: 1568531861}
+      - {fileID: 2055560527}
+      evt:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1878145032}
+            m_TargetAssemblyTypeName: BookCamera, Assembly-CSharp
+            m_MethodName: FocusOnTargetPage
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    cam: {fileID: 1878145030}
+    book: {fileID: 415041330000255365}
+  - _pageToggleSceneData: []
+    cam: {fileID: 1917675179}
+    book: {fileID: 181053814}
+  - _pageToggleSceneData: []
+    cam: {fileID: 0}
+    book: {fileID: 0}
 --- !u!4 &841858259
 Transform:
   m_ObjectHideFlags: 0
@@ -38672,29 +38679,6 @@ Transform:
   - {fileID: 1800153422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &841858260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841858257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8893d05d05eaf47aae594f03a9052e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cg: {fileID: 1528050093}
-  toShow:
-  - {fileID: 1582884593}
-  toHide:
-  - {fileID: 1907505316}
-  - {fileID: 311184656137399335}
-  - {fileID: 1959036178}
-  - {fileID: 37458807}
-  - {fileID: 2055560527}
-  - {fileID: 1568531861}
-  duration: 1.5
 --- !u!1 &844163188
 GameObject:
   m_ObjectHideFlags: 0
@@ -77930,6 +77914,7 @@ GameObject:
   - component: {fileID: 1878145031}
   - component: {fileID: 1878145030}
   - component: {fileID: 1878145032}
+  - component: {fileID: 1878145033}
   m_Layer: 0
   m_Name: book cam
   m_TagString: Untagged
@@ -78017,9 +78002,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1912060013}
   duration: 5
-  bookSceneSwitcher: {fileID: 841858260}
+  bookSceneSwitcher: {fileID: 1878145033}
   toDisactives:
   - {fileID: 1959036178}
+--- !u!114 &1878145033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878145028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8893d05d05eaf47aae594f03a9052e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cg: {fileID: 1528050093}
+  toShow:
+  - {fileID: 1582884593}
+  toHide:
+  - {fileID: 1907505316}
+  - {fileID: 311184656137399335}
+  - {fileID: 1959036178}
+  - {fileID: 37458807}
+  - {fileID: 2055560527}
+  - {fileID: 1568531861}
+  duration: 1.5
 --- !u!1 &1882650473
 GameObject:
   m_ObjectHideFlags: 0
@@ -78666,7 +78674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1484336448}
   duration: 5
-  bookSceneSwitcher: {fileID: 841858260}
+  bookSceneSwitcher: {fileID: 0}
   toDisactives:
   - {fileID: 1959036178}
 --- !u!20 &1917675179
@@ -85052,7 +85060,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 32
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: c6d0f75b13dd03649852a63286affc45, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: f04dc0f6cf4d2bf46b58a90cba274564, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -95922,7 +95930,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 39dc3f4f898610f4287793a9255b1f39, type: 2}
   - {fileID: 2100000, guid: ed1ad3f60426da9418e4ac26c133788e, type: 2}
-  - {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
+  - {fileID: 2100000, guid: e2e2d67befe2c5b449183049cee05e7d, type: 2}
   - {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
   - {fileID: 2100000, guid: 8c50ee3390bceda45bd998157dc47e9d, type: 2}
   m_StaticBatchInfo:
@@ -98513,7 +98521,7 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 39dc3f4f898610f4287793a9255b1f39, type: 2}
   - {fileID: 2100000, guid: ed1ad3f60426da9418e4ac26c133788e, type: 2}
-  - {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
+  - {fileID: 2100000, guid: e2e2d67befe2c5b449183049cee05e7d, type: 2}
   - {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
   - {fileID: 2100000, guid: 8c50ee3390bceda45bd998157dc47e9d, type: 2}
   m_StaticBatchInfo:
@@ -98629,7 +98637,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ed1ad3f60426da9418e4ac26c133788e, type: 2}
   - {fileID: 2100000, guid: 8c50ee3390bceda45bd998157dc47e9d, type: 2}
   - {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
-  - {fileID: 2100000, guid: 61a77c46318d0f543904413c366b516d, type: 2}
+  - {fileID: 2100000, guid: e2e2d67befe2c5b449183049cee05e7d, type: 2}
   materialMappings:
   - materialType: 0
     mappings:
@@ -98712,7 +98720,7 @@ MonoBehaviour:
     mappings: []
   pageData:
   - material: {fileID: 2100000, guid: 4a6b336d4442b6b4ea86696418657ed4, type: 2}
-  - material: {fileID: 2100000, guid: 61a77c46318d0f543904413c366b516d, type: 2}
+  - material: {fileID: 2100000, guid: e2e2d67befe2c5b449183049cee05e7d, type: 2}
   - material: {fileID: 2100000, guid: fc2241260ac80c541ba5097e1d26291b, type: 2}
   - material: {fileID: 2100000, guid: f20546c2a73d666439281ab57a9a3427, type: 2}
   - material: {fileID: 2100000, guid: fc2241260ac80c541ba5097e1d26291b, type: 2}

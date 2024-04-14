@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class BookSceneSwitcher : MonoBehaviour
@@ -7,6 +8,14 @@ public class BookSceneSwitcher : MonoBehaviour
     public GameObject[] toShow;
     public GameObject[] toHide;
     public float duration;
+
+    public static BookSceneSwitcher notAGoodInstance;
+
+    private void Awake()
+    {
+        notAGoodInstance = this;
+    }
+
     public void SwitchToHouseScene()
     {
         cg.DOFade(1, duration).OnComplete(
@@ -24,4 +33,19 @@ public class BookSceneSwitcher : MonoBehaviour
         SmallHouseBehaviour.instance.InitBooks();
     }
 
+    public static void Switch(Action action)
+    {
+        notAGoodInstance.GeneralSwitch(action);
+    }
+
+    public void GeneralSwitch(Action action)
+    {
+        cg.DOFade(1, duration).OnComplete(
+            () =>
+            {
+                action?.Invoke();
+                cg.DOFade(0, duration);
+            }
+            );
+    }
 }

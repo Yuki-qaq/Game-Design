@@ -69,6 +69,9 @@ public class SmallHouseBehaviour : MonoBehaviour
             _slots.Add(bookSlot);
         }
 
+        //shuffle books into random order, but it is not enough, shuffle 3 times!
+        books.Sort(SortRandom);
+        books.Sort(SortRandom);
         books.Sort(SortRandom);
 
         i = 0;
@@ -203,15 +206,15 @@ public class SmallHouseBehaviour : MonoBehaviour
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
-        float extraTime = 1.1f;
+        float extraTime = 0.8f;
         foreach (var b in booksFinalAnim)
         {
             b.enabled = true;
-            b.transform.DOShakeRotation(0.5f + extraTime, 4, 10);
-            yield return new WaitForSeconds(0.4f + extraTime);
+            b.transform.DOShakeRotation(0.6f + extraTime, 4, 10);
+            yield return new WaitForSeconds(0.3f + extraTime);
             b.SetToFinalString();
             yield return new WaitForSeconds(0.1f);
-            extraTime -= 0.4f;
+            extraTime -= 0.3f;
             if (extraTime < 0)
                 extraTime = 0;
             //SoundSystem.instance.Play("note");
@@ -226,13 +229,16 @@ public class SmallHouseBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    [SerializeField] private EndlessBook book2;
-    [SerializeField] private Camera book2Cam;
-
     public void EnterBook()
     {
+        // inPuzzle = false;
         Debug.Log("EnterBook ");
-        BookController.instance.SwitchBook(book2Cam, book2);
+        BookSceneSwitcher.Switch(() =>
+        {
+            fpc.enabled = false;
+            BookController.instance.SwitchBook(BookController.instance.bookDatas[1]);
+        });
+
         Cursor.lockState = CursorLockMode.None;
     }
 }
