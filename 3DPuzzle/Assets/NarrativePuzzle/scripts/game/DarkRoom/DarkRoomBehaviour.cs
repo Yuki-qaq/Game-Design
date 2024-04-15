@@ -40,9 +40,9 @@ public class DarkRoomBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void ToggleWatchBookShelf(bool on)
+    public void ToggleWatchPuzzle(bool on)
     {
-        Debug.Log("ToggleWatchBookShelf " + on);
+        Debug.Log("ToggleWatchPuzzle " + on);
         hud_enterPuzzle.SetActive(on);
     }
 
