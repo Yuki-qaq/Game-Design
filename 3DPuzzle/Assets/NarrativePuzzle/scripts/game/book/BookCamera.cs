@@ -23,7 +23,7 @@ public class BookCamera : MonoBehaviour
         transform.rotation = _startRot;
     }
 
-    public void FocusOnTargetPage()
+    public void FocusOnTargetPage_smallHouse()
     {
         foreach (var t in toDisactives)
             t.SetActive(false);
@@ -33,6 +33,19 @@ public class BookCamera : MonoBehaviour
         transform.DORotateQuaternion(_target.rotation, duration).SetEase(Ease.InOutCubic).SetDelay(1.5f).OnComplete(
 
             () => { bookSceneSwitcher.SwitchToHouseScene(); }
+            );
+    }
+
+    public void FocusOnTargetPage_darkRoomHouse()
+    {
+        foreach (var t in toDisactives)
+            t.SetActive(false);
+
+        transform.DOKill();
+        transform.DOMove(_target.position, duration).SetEase(Ease.InOutCubic).SetDelay(0.7f);
+        transform.DORotateQuaternion(_target.rotation, duration).SetEase(Ease.InOutCubic).SetDelay(1.5f).OnComplete(
+
+            () => { bookSceneSwitcher.SwitchToDarkRoom(); }
             );
     }
 }

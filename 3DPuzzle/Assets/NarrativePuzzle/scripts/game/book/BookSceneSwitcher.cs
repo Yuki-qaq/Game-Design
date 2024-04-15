@@ -8,6 +8,8 @@ public class BookSceneSwitcher : MonoBehaviour
     public GameObject[] toShow;
     public GameObject[] toHide;
     public float duration;
+    public GameObject fpc;
+    public GameObject fpcAttachPlace;
 
     public static BookSceneSwitcher notAGoodInstance;
 
@@ -16,20 +18,28 @@ public class BookSceneSwitcher : MonoBehaviour
         notAGoodInstance = this;
     }
 
+    void CommonSwitchScene()
+    {
+        GeneralSwitch(() =>
+        {
+            foreach (var th in toHide)
+                th.SetActive(false);
+            foreach (var ts in toShow)
+                ts.SetActive(true);
+
+            fpc.transform.position = fpcAttachPlace.transform.position;
+            fpc.transform.rotation = fpcAttachPlace.transform.rotation;
+        });
+    }
+    public void SwitchToDarkRoom()
+    {
+        CommonSwitchScene();
+        //SmallHouseBehaviour.instance.InitBooks();
+    }
+
     public void SwitchToHouseScene()
     {
-        cg.DOFade(1, duration).OnComplete(
-            () =>
-            {
-                foreach (var th in toHide)
-                    th.SetActive(false);
-                foreach (var ts in toShow)
-                    ts.SetActive(true);
-
-                cg.DOFade(0, duration);
-            }
-            );
-
+        CommonSwitchScene();
         SmallHouseBehaviour.instance.InitBooks();
     }
 
