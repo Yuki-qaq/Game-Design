@@ -106035,6 +106035,7 @@ GameObject:
   - component: {fileID: 2102471440}
   - component: {fileID: 2102471439}
   - component: {fileID: 2102471438}
+  - component: {fileID: 2102471441}
   m_Layer: 7
   m_Name: interactable
   m_TagString: Untagged
@@ -106128,6 +106129,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102471436}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2102471441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102471436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950e499ac3319ad4dba78d3f0c7e1e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 352526895}
+        m_TargetAssemblyTypeName: DarkRoomBehaviour, Assembly-CSharp
+        m_MethodName: EnterPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &2103336803
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -36,7 +36,8 @@ public class DarkRoomBehaviour : MonoBehaviour
 
     public void InitPuzzle()
     {
-
+        fpc.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ToggleWatchBookShelf(bool on)

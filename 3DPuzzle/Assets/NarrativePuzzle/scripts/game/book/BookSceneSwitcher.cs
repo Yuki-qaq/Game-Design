@@ -34,7 +34,7 @@ public class BookSceneSwitcher : MonoBehaviour
     public void SwitchToDarkRoom()
     {
         CommonSwitchScene();
-        //SmallHouseBehaviour.instance.InitBooks();
+        DarkRoomBehaviour.instance.InitPuzzle();
     }
 
     public void SwitchToHouseScene()
