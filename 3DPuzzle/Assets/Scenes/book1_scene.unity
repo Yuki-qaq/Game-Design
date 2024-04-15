@@ -4338,11 +4338,11 @@ Transform:
   m_GameObject: {fileID: 348678975}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.64, y: -1.0960013, z: 0.28962708}
+  m_LocalPosition: {x: -1.4000015, y: 1.15, z: -102.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1660580040}
+  m_Father: {fileID: 888369988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352526894
 GameObject:
@@ -4374,7 +4374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1332767520}
-  puzzleCamera: {fileID: 348678976}
+  puzzleCamera: {fileID: 932223586}
   endBook: {fileID: 2097437258}
   hud_enterPuzzle: {fileID: 541695605}
   triggerCol_enterPuzzle: {fileID: 2102471436}
@@ -44594,7 +44594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 932223586}
+  - {fileID: 348678976}
   - {fileID: 1611999493}
   - {fileID: 858850577}
   - {fileID: 433636523}
@@ -44622,7 +44622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1332767520}
-  puzzleCamera: {fileID: 932223586}
+  puzzleCamera: {fileID: 348678976}
   endBook: {fileID: 1648582820071975}
   hud_enterPuzzle: {fileID: 1501834393}
   triggerCol_enterPuzzle: {fileID: 1442379340}
@@ -45271,11 +45271,11 @@ Transform:
   m_GameObject: {fileID: 932223585}
   serializedVersion: 2
   m_LocalRotation: {x: 0.03242131, y: 0.60969466, z: -0.024766222, w: 0.79158574}
-  m_LocalPosition: {x: -59.852528, y: 3.8348446, z: -102.771255}
+  m_LocalPosition: {x: -1.8125267, y: 1.5888433, z: -0.18162537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 888369988}
+  m_Father: {fileID: 1660580040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &941544617
 GameObject:
@@ -76650,8 +76650,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 932223586}
   - {fileID: 131809183}
-  - {fileID: 348678976}
   - {fileID: 2097437259}
   - {fileID: 2017333258}
   - {fileID: 2102471437}
