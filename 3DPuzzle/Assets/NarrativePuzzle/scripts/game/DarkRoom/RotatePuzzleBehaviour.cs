@@ -1,39 +1,47 @@
 ﻿using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RotatePuzzleBehaviour : MonoBehaviour
 {
-    private Vector3 mOffset;
-    private float mZCoord;
     public float dist = 1f;
     public LayerMask layerMask;
     private bool _isDragging;
     private Collider _col;
     private ParticleSystem _ps;
 
-    private void Awake()
+    public RotateObject ro;
+
+    public Transform targetRotationRef;
+    private Quaternion _targetRotation;
+    public float toleranceAngle;
+    private void Start()
     {
-        _col = GetComponent<Collider>();
+        _targetRotation = targetRotationRef.rotation;
     }
 
-    private Vector3 GetMouseWorldPos()
+    private void Awake()
     {
-        Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = mZCoord;
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        _ps = GetComponentInChildren<ParticleSystem>();
+        _col = GetComponentInChildren<Collider>();
     }
+
     public void StartDrag()
     {
         Debug.Log("StartDrag");
         _isDragging = true;
-        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        mOffset = gameObject.transform.position - GetMouseWorldPos();
+        ro.OnStart();
     }
 
     public void EndDrag()
     {
         Debug.Log("EndDrag");
-        bool isFinal = false;
+        ro.OnEnd();
+        Debug.Log(ro.transform.rotation);
+        Debug.Log(_targetRotation);
+        var deltaRot = Quaternion.Angle(ro.transform.rotation, _targetRotation);
+        Debug.Log(deltaRot);
+        bool isFinal = deltaRot <= toleranceAngle;
         _isDragging = false;
 
         if (isFinal)
@@ -42,14 +50,6 @@ public class RotatePuzzleBehaviour : MonoBehaviour
             DarkRoomBehaviour.instance.OnPuzzleEnd();
         }
 
-    }
-
-    private void Update()
-    {
-        if (_isDragging)
-        {
-            transform.position = GetMouseWorldPos() + mOffset;
-        }
     }
 
     void LateUpdate()
