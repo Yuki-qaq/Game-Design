@@ -1,0 +1,50 @@
+{
+    "name": "XCSJ.EditorXDreamer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:63fd63df41085504f8c37f48efa6593f",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:fe685ec1767f73d42b749ea8045bfe43",
+        "GUID:190979c3ed6e41c448f5e9925429edf9",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:dc960734dc080426fa6612f1c5fe95f3",
+        "GUID:db603e093ec73d947be07e6d74d60fc1",
+        "GUID:ee03b17b74a841a4b8af3e5c8f88f9ea",
+        "GUID:8b34362e30924cc4c898574d4e3cbff3",
+        "GUID:65a004a26c89ac5468e8d4b4b057f1c8",
+        "GUID:e4a33864bef55b140b799f07570224d2",
+        "GUID:33c2696c2b2c2794991e0571bd1c0d3a",
+        "GUID:a9420e37d7990b54abdef6688edbe313",
+        "GUID:1fbf338ef6b952a448262a7ff7df5fe4"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "XCSJ.dll",
+        "XCSJ.PluginCommonUtils.dll",
+        "XCSJ.PluginCamera.dll",
+        "XCSJ.PluginSMS.dll",
+        "XCSJ.PluginTools.dll",
+        "XCSJ.PluginDataBase.dll",
+        "XCSJ.PluginMMO.dll",
+        "XCSJ.PluginRepairman.dll",
+        "XCSJ.EditorCommonUtils.dll",
+        "XCSJ.EditorCamera.dll",
+        "XCSJ.EditorSMS.dll",
+        "XCSJ.EditorTools.dll",
+        "XCSJ.EditorRepairman.dll",
+        "XCSJ.EditorDataBase.dll",
+        "zxing.unity.dll",
+        "ICSharpCode.SharpZipLib.dll",
+        "Vuforia.Unity.Engine.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

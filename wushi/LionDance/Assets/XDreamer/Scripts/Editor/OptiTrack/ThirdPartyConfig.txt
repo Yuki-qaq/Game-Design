@@ -1,0 +1,21 @@
+
+{
+    "configs" : [
+        {
+            "beginVersion" : "1.4.0",
+            "endVersion"   : "1.4.0",
+            "fileConfigs"  : [
+                {
+                    "file" : {
+                        "src" : "./PluginAsmdef.txt",
+                        "dst" : "Assets/OptiTrack/XCSJ.PluginThirdParty.OptiTrack.asmdef"
+                    },
+                    "metaFile" : {
+                        "src" : "./PluginAsmdefMeta.txt",
+                        "dst" : "Assets/OptiTrack/XCSJ.PluginThirdParty.OptiTrack.asmdef.meta"
+                    }
+                }
+            ]
+        }
+    ]
+}

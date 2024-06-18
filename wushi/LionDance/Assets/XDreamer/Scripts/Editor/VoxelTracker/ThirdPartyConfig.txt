@@ -1,0 +1,21 @@
+
+{
+    "configs" : [
+        {
+            "beginVersion" : "1.4.0",
+            "endVersion"   : "1.4.0",
+            "fileConfigs"  : [
+                {
+                    "file" : {
+                        "src" : "./PluginAsmdef.txt",
+                        "dst" : "Assets/VoxelStation/Script/XCSJ.PluginThirdParty.VoxelTracker.asmdef"
+                    },
+                    "metaFile" : {
+                        "src" : "./PluginAsmdefMeta.txt",
+                        "dst" : "Assets/VoxelStation/Script/XCSJ.PluginThirdParty.VoxelTracker.asmdef.meta"
+                    }
+                }
+            ]
+        }
+    ]
+}

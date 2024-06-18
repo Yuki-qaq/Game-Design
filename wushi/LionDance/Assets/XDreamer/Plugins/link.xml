@@ -1,0 +1,14 @@
+<linker>
+  <!--
+  保留XDreamer相关程序集中所有的类型
+  -->
+  <assembly fullname="XCSJ" preserve="all" />
+  <assembly fullname="XCSJ.PluginCamera" preserve="all" />
+  <assembly fullname="XCSJ.PluginCommonUtils" preserve="all" />
+  <assembly fullname="XCSJ.PluginDataBase" preserve="all" />
+  <assembly fullname="XCSJ.PluginMMO" preserve="all" />
+  <assembly fullname="XCSJ.PluginRepairman" preserve="all" />
+  <assembly fullname="XCSJ.PluginSMS" preserve="all" />
+  <assembly fullname="XCSJ.PluginTools" preserve="all" />
+  <assembly fullname="XCSJ.PluginXDreamer" preserve="all" />
+</linker>

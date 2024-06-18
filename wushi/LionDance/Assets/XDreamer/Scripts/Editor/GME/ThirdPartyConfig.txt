@@ -1,0 +1,21 @@
+
+{
+    "configs" : [
+        {
+            "beginVersion" : "2.9.9",
+            "endVersion"   : "2.9.9",
+            "fileConfigs"  : [
+                {
+                    "file" : {
+                        "src" : "./PluginAsmdef.txt",
+                        "dst" : "Assets/GMESDK/XCSJ.PluginThirdPaty.GME.asmdef"
+                    },
+                    "metaFile" : {
+                        "src" : "./PluginAsmdefMeta.txt",
+                        "dst" : "Assets/GMESDK/XCSJ.PluginThirdPaty.GME.asmdef.meta"
+                    }
+                }
+            ]
+        }
+    ]
+}

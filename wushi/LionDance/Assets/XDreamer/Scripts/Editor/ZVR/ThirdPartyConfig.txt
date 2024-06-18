@@ -1,0 +1,21 @@
+
+{
+    "configs" : [
+        {
+            "beginVersion" : "1.4.4.28",
+            "endVersion"   : "1.4.4.28",
+            "fileConfigs"  : [
+                {
+                    "file" : {
+                        "src" : "./PluginAsmdef.txt",
+                        "dst" : "Assets/GOKU/XCSJ.PluginThirdParty.ZVR.asmdef"
+                    },
+                    "metaFile" : {
+                        "src" : "./PluginAsmdefMeta.txt",
+                        "dst" : "Assets/GOKU/XCSJ.PluginThirdParty.ZVR.asmdef.meta"
+                    }
+                }
+            ]
+        }
+    ]
+}
