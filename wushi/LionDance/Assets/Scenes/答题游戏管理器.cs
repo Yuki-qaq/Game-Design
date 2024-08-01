@@ -66,7 +66,7 @@ public class 答题游戏管理器 : MonoBehaviour
         var s = "";
         foreach (var t in 所有题目)
         {
-            s += t.GetResult();
+            s += t.GetResult(所有题目.IndexOf(t));
         }
         resText.text = s;
     }
