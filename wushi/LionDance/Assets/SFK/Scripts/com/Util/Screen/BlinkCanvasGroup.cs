@@ -52,7 +52,7 @@ namespace com
             {
                 if (Loop)
                 {
-                    btb.OnLoopStart();
+                    btb?.OnLoopStart();
                     Play();
                 }
                 else
