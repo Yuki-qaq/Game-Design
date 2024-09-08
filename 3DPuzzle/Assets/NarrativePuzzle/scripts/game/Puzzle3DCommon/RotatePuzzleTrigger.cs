@@ -2,6 +2,7 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RotatePuzzleTrigger : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class RotatePuzzleTrigger : MonoBehaviour
     public FirstPersonController fpc;
     private Transform _mainCamera_defaultParent;
     public RotatePuzzleBehaviour rpb;
+    public UnityEvent puzzleEndEvt;
 
     private void Start()
     {
@@ -61,6 +63,7 @@ public class RotatePuzzleTrigger : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
         fpc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+        puzzleEndEvt?.Invoke();
     }
 
     public void ToggleWatchPuzzle(bool on)
