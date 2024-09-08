@@ -1,5 +1,4 @@
 ﻿using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class RotatePuzzleBehaviour : MonoBehaviour
@@ -15,6 +14,9 @@ public class RotatePuzzleBehaviour : MonoBehaviour
     public Transform targetRotationRef;
     private Quaternion _targetRotation;
     public float toleranceAngle;
+
+    [HideInInspector]
+    public RotatePuzzleTrigger rpt;
     private void Start()
     {
         _targetRotation = targetRotationRef.rotation;
@@ -35,28 +37,20 @@ public class RotatePuzzleBehaviour : MonoBehaviour
 
     public void EndDrag()
     {
-        Debug.Log("EndDrag");
         ro.OnEnd();
-        Debug.Log(ro.transform.rotation);
-        Debug.Log(_targetRotation);
         var deltaRot = Quaternion.Angle(ro.transform.rotation, _targetRotation);
-        Debug.Log(deltaRot);
         bool isFinal = deltaRot <= toleranceAngle;
         _isDragging = false;
 
         if (isFinal)
         {
             _ps.Play();
-            DarkRoomBehaviour.instance.OnPuzzleEnd();
+            rpt?.OnPuzzleEnd();
         }
-
     }
 
     void LateUpdate()
     {
-        // if (!DarkRoomBehaviour.instance.inPuzzle)
-        //      return;
-
         if (!_isDragging)
         {
             // Check if the left mouse button was clicked

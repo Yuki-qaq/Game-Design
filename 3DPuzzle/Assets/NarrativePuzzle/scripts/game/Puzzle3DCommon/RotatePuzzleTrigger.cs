@@ -13,14 +13,11 @@ public class RotatePuzzleTrigger : MonoBehaviour
     public FirstPersonController fpc;
     private Transform _mainCamera_defaultParent;
     public RotatePuzzleBehaviour rpb;
-    public bool inPuzzle { get; private set; }
-
 
     private void Start()
     {
         hud_enterPuzzle.SetActive(false);
         _mainCamera_defaultParent = mainCamera.parent;
-        inPuzzle = false;
     }
 
     public void InitPuzzle()
@@ -31,8 +28,8 @@ public class RotatePuzzleTrigger : MonoBehaviour
 
     public void EnterPuzzle()
     {
-        hud_enterPuzzle.SetActive(false);
         triggerCol_enterPuzzle.SetActive(false);
+        hud_enterPuzzle.SetActive(false);
         Debug.Log("EnterPuzzle ");
         Cursor.lockState = CursorLockMode.None;
         mainCamera.SetParent(null);
@@ -40,31 +37,28 @@ public class RotatePuzzleTrigger : MonoBehaviour
         //off player control
         fpc.enabled = false;
         rpb.enabled = true;
-
-        mainCamera.DOMove(puzzleCamera.position, durationTransitCamera).SetEase(Ease.InOutCubic).OnComplete(
-            () =>
-            { inPuzzle = true; }
-            );
+        rpb.rpt = this;
+        mainCamera.DOMove(puzzleCamera.position, durationTransitCamera).SetEase(Ease.InOutCubic);
         mainCamera.DORotate(puzzleCamera.eulerAngles, durationTransitCamera).SetEase(Ease.InOutCubic);
     }
 
     public void OnPuzzleEnd()
     {
         Debug.Log("OnPuzzleEnd ");
-        inPuzzle = false;
         rpb.enabled = false;
-        //show some chat
-        //play sound
         StartCoroutine(OnPuzzleEnd_Coroutine());
     }
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         mainCamera.SetParent(_mainCamera_defaultParent);
-        mainCamera.localEulerAngles = Vector3.zero;
-        mainCamera.localPosition = Vector3.zero;
         mainCamera.DOKill();
+        mainCamera.DOMove(_mainCamera_defaultParent.position, 1).SetEase(Ease.InOutCubic);
+        mainCamera.DORotate(_mainCamera_defaultParent.eulerAngles, 1).SetEase(Ease.InOutCubic);
+        //mainCamera.localEulerAngles = Vector3.zero;
+        //mainCamera.localPosition = Vector3.zero;
+        yield return new WaitForSeconds(1.1f);
         fpc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
