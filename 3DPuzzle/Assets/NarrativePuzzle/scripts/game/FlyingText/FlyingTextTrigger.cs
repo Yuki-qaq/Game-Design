@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Game.Scripts.com.FlyingText
 {
@@ -9,6 +10,7 @@ namespace Assets.Game.Scripts.com.FlyingText
         [SerializeField] Transform playerTrans;
         [SerializeField] Transform target;
         int _times;
+        [SerializeField] UnityEvent evt;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -23,6 +25,7 @@ namespace Assets.Game.Scripts.com.FlyingText
         {
             _times++;
             FlyingTextSystem.instance.Add(proto, target);
+            evt?.Invoke();
         }
     }
 }
