@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00935826bb4271e49905bde85e11e249, type: 3}
   m_Name: FT1 3
   m_EditorClassIdentifier: 
-  content: infinitive
+  content: My mum told me uncle Sam is under these rocks
   color: {r: 0.6792453, g: 0, b: 0, a: 1}
   timeRatio: 1
   breakCharNum: 40
