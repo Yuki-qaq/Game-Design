@@ -15,6 +15,6 @@ MonoBehaviour:
   content: My mum told me uncle Sam is under these rocks
   color: {r: 0.6792453, g: 0, b: 0, a: 1}
   timeRatio: 1
-  breakCharNum: 40
+  breakCharNum: 28
   fromCorner: 0
   leaveCorner: 3

@@ -16,7 +16,7 @@ public class RotatePuzzleBehaviour : MonoBehaviour
     public float toleranceAngle;
 
     [HideInInspector]
-    public RotatePuzzleTrigger rpt;
+    public PuzzleTrigger pt;
     private void Start()
     {
         _targetRotation = targetRotationRef.rotation;
@@ -26,6 +26,12 @@ public class RotatePuzzleBehaviour : MonoBehaviour
     {
         _ps = GetComponentInChildren<ParticleSystem>();
         _col = GetComponentInChildren<Collider>();
+    }
+
+    public void StartPuzzle(PuzzleTrigger pt)
+    {
+        this.enabled = true;
+        this.pt = pt;
     }
 
     public void StartDrag()
@@ -45,7 +51,9 @@ public class RotatePuzzleBehaviour : MonoBehaviour
         if (isFinal)
         {
             _ps.Play();
-            rpt?.OnPuzzleEnd();
+            this.pt.OnPuzzleEnd();
+            this.enabled = false;
+            this.pt = null;
         }
     }
 

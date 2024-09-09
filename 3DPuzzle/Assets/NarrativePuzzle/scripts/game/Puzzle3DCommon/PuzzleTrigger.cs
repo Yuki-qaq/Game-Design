@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class RotatePuzzleTrigger : MonoBehaviour
+public class PuzzleTrigger : MonoBehaviour
 {
     public Transform mainCamera;
     public Transform puzzleCamera;
@@ -13,8 +13,11 @@ public class RotatePuzzleTrigger : MonoBehaviour
     public float durationTransitCamera;
     public FirstPersonController fpc;
     private Transform _mainCamera_defaultParent;
-    public RotatePuzzleBehaviour rpb;
+
+    public UnityEvent puzzleEndInstantEvt;
     public UnityEvent puzzleEndEvt;
+    public UnityEvent puzzleStartInstantEvt;
+    public UnityEvent puzzleStartEvt;
 
     private void Start()
     {
@@ -30,29 +33,30 @@ public class RotatePuzzleTrigger : MonoBehaviour
 
     public void EnterPuzzle()
     {
+        puzzleStartInstantEvt?.Invoke();
         triggerCol_enterPuzzle.SetActive(false);
         hud_enterPuzzle.SetActive(false);
-        Debug.Log("EnterPuzzle ");
+        //Debug.Log("EnterPuzzle ");
         Cursor.lockState = CursorLockMode.None;
         mainCamera.SetParent(null);
         //off player camera follow
         //off player control
+
         fpc.enabled = false;
-        rpb.enabled = true;
-        rpb.rpt = this;
-        mainCamera.DOMove(puzzleCamera.position, durationTransitCamera).SetEase(Ease.InOutCubic);
+        mainCamera.DOMove(puzzleCamera.position, durationTransitCamera).SetEase(Ease.InOutCubic).
+            OnComplete(() => { puzzleStartEvt?.Invoke(); });
         mainCamera.DORotate(puzzleCamera.eulerAngles, durationTransitCamera).SetEase(Ease.InOutCubic);
     }
 
     public void OnPuzzleEnd()
     {
-        Debug.Log("OnPuzzleEnd ");
-        rpb.enabled = false;
+        //Debug.Log("OnPuzzleEnd ");
         StartCoroutine(OnPuzzleEnd_Coroutine());
     }
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
+        puzzleEndInstantEvt?.Invoke();
         yield return new WaitForSeconds(1.0f);
         mainCamera.SetParent(_mainCamera_defaultParent);
         mainCamera.DOKill();
@@ -68,7 +72,7 @@ public class RotatePuzzleTrigger : MonoBehaviour
 
     public void ToggleWatchPuzzle(bool on)
     {
-        Debug.Log("ToggleWatchPuzzle " + on);
+        //Debug.Log("ToggleWatchPuzzle " + on);
         hud_enterPuzzle.SetActive(on);
     }
 }
