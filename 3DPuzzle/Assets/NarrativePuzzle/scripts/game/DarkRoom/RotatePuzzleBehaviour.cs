@@ -15,8 +15,6 @@ public class RotatePuzzleBehaviour : MonoBehaviour
     private Quaternion _targetRotation;
     public float toleranceAngle;
 
-    [HideInInspector]
-    public PuzzleTrigger pt;
     private void Start()
     {
         _targetRotation = targetRotationRef.rotation;
@@ -26,12 +24,6 @@ public class RotatePuzzleBehaviour : MonoBehaviour
     {
         _ps = GetComponentInChildren<ParticleSystem>();
         _col = GetComponentInChildren<Collider>();
-    }
-
-    public void StartPuzzle(PuzzleTrigger pt)
-    {
-        this.enabled = true;
-        this.pt = pt;
     }
 
     public void StartDrag()
@@ -51,9 +43,8 @@ public class RotatePuzzleBehaviour : MonoBehaviour
         if (isFinal)
         {
             _ps.Play();
-            this.pt.OnPuzzleEnd();
+            DarkRoomBehaviour.instance.OnPuzzleEnd();
             this.enabled = false;
-            this.pt = null;
         }
     }
 

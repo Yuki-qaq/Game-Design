@@ -22,6 +22,7 @@ public class DarkRoomBehaviour : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        BookSceneSwitcher.notAGoodInstance.FadeFromWhite(null);
     }
 
     private void Start()

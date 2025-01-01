@@ -36,6 +36,7 @@ public class BookSceneSwitcher : MonoBehaviour
     }
     public void SwitchToDarkRoom()
     {
+        Debug.Log("SwitchToDarkRoom");
         //CommonSwitchScene();
         //DarkRoomBehaviour.instance.InitPuzzle();
         //TODO change Scene
