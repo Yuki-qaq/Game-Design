@@ -1,6 +1,9 @@
 using DG.Tweening;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using static System.Collections.Specialized.BitVector32;
 
 public class BookSceneSwitcher : MonoBehaviour
 {
@@ -33,8 +36,10 @@ public class BookSceneSwitcher : MonoBehaviour
     }
     public void SwitchToDarkRoom()
     {
-        CommonSwitchScene();
-        DarkRoomBehaviour.instance.InitPuzzle();
+        //CommonSwitchScene();
+        //DarkRoomBehaviour.instance.InitPuzzle();
+        //TODO change Scene
+        FadeToWhite(() => {  SceneManager.LoadScene(1);});
     }
 
     public void SwitchToHouseScene()
@@ -57,5 +62,24 @@ public class BookSceneSwitcher : MonoBehaviour
                 cg.DOFade(0, duration);
             }
             );
+    }
+
+    public void FadeToWhite(Action action)
+    {
+        cg.DOFade(1, duration).OnComplete(
+      () =>
+      {
+          action?.Invoke();
+      });
+    }
+
+    public void FadeFromWhite(Action action)
+    {
+        cg.alpha = 1;
+        cg.DOFade(0, duration).OnComplete(
+     () =>
+     {
+         action?.Invoke();
+     });
     }
 }
