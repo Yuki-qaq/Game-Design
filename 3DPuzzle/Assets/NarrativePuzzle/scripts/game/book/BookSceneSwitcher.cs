@@ -92,30 +92,50 @@ public class BookSceneSwitcher : MonoBehaviour
     public Transform bookCam1;
     public Transform bookCam2;
 
+    bool _GuideCameraBook1_1_done = false;
+    bool _GuideCameraBook1_2_done = false;
+    bool _GuideCameraBook2_1_done = false;
+
     public void GuideCameraBook1_1()
     {
+        if (_GuideCameraBook1_1_done)
+            return;
+
+        _GuideCameraBook1_1_done = true;
         StartCoroutine(GuideCameraAndDisableBookControlThenBack(GuideCameraBook1_1_trans, bookCam1));
     }
 
     public void GuideCameraBook1_2()
     {
+        if (_GuideCameraBook1_2_done)
+            return;
+
+        _GuideCameraBook1_2_done = true;
         StartCoroutine(GuideCameraAndDisableBookControlThenBack(GuideCameraBook1_2_trans, bookCam1));
     }
 
     public void GuideCameraBook2_1()
     {
+        if (_GuideCameraBook2_1_done)
+            return;
+
+        _GuideCameraBook2_1_done = true;
         StartCoroutine(GuideCameraAndDisableBookControlThenBack(GuideCameraBook2_1_trans, bookCam2));
     }
 
 
     IEnumerator GuideCameraAndDisableBookControlThenBack(Transform[] trans, Transform cameraTrans)
     {
+        Debug.Log("GuideCameraAndDisableBookControlThenBack");
+        Debug.Log(trans.Length);
+        Debug.Log(cameraTrans.gameObject);
+
         cameraTrans.DOKill();
         var pos0 = cameraTrans.position;
         var rot0 = cameraTrans.eulerAngles;
         bookControlPad.SetActive(false);
         yield return new WaitForSeconds(0.3f);
-        var duration = 1.8f;
+        var duration = 1.6f;
         bool first = true;
         foreach (var t in trans)
         {
