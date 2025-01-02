@@ -83,7 +83,7 @@ public class DarkRoomBehaviour : MonoBehaviour
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.5f);
         mainCamera.SetParent(_mainCamera_defaultParent);
         mainCamera.localEulerAngles = Vector3.zero;
         mainCamera.localPosition = Vector3.zero;

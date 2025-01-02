@@ -37,6 +37,7 @@ public class RotatePuzzleBehaviour : MonoBehaviour
     {
         ro.OnEnd();
         var deltaRot = Quaternion.Angle(ro.transform.rotation, _targetRotation);
+        Debug.Log("Angle " + deltaRot);
         bool isFinal = deltaRot <= toleranceAngle;
         _isDragging = false;
 

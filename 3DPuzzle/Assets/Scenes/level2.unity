@@ -72219,7 +72219,7 @@ MonoBehaviour:
     m_Bits: 128
   ro: {fileID: 6061984352644065094}
   targetRotationRef: {fileID: 1223909328}
-  toleranceAngle: 3.6
+  toleranceAngle: 4
 --- !u!4 &7753189492706702633
 Transform:
   m_ObjectHideFlags: 0

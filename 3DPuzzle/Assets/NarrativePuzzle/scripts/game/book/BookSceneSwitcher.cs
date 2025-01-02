@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,7 +41,7 @@ public class BookSceneSwitcher : MonoBehaviour
         //CommonSwitchScene();
         //DarkRoomBehaviour.instance.InitPuzzle();
         //TODO change Scene
-        FadeToWhite(() => {  SceneManager.LoadScene(1);});
+        FadeToWhite(() => { SceneManager.LoadScene(1); });
     }
 
     public void SwitchToHouseScene()
@@ -82,5 +83,52 @@ public class BookSceneSwitcher : MonoBehaviour
      {
          action?.Invoke();
      });
+    }
+
+    public Transform[] GuideCameraBook1_1_trans;
+    public Transform[] GuideCameraBook1_2_trans;
+    public Transform[] GuideCameraBook2_1_trans;
+    public GameObject bookControlPad;
+    public Transform bookCam1;
+    public Transform bookCam2;
+
+    public void GuideCameraBook1_1()
+    {
+        StartCoroutine(GuideCameraAndDisableBookControlThenBack(GuideCameraBook1_1_trans, bookCam1));
+    }
+
+    public void GuideCameraBook1_2()
+    {
+        StartCoroutine(GuideCameraAndDisableBookControlThenBack(GuideCameraBook1_2_trans, bookCam1));
+    }
+
+    public void GuideCameraBook2_1()
+    {
+        StartCoroutine(GuideCameraAndDisableBookControlThenBack(GuideCameraBook2_1_trans, bookCam2));
+    }
+
+
+    IEnumerator GuideCameraAndDisableBookControlThenBack(Transform[] trans, Transform cameraTrans)
+    {
+        var pos0 = cameraTrans.position;
+        var rot0 = cameraTrans.eulerAngles;
+        bookControlPad.SetActive(false);
+        yield return new WaitForSeconds(1);
+        var duration = 1.5f;
+        foreach (var t in trans)
+        {
+            yield return new WaitForSeconds(1);
+            cameraTrans.DOMove(t.position, duration);
+            cameraTrans.DORotate(t.eulerAngles, duration);
+            yield return new WaitForSeconds(duration);
+        }
+
+        yield return new WaitForSeconds(0.8f);
+        var d2 = duration + 2;
+        cameraTrans.DOMove(pos0, d2).SetEase(Ease.OutCubic);
+        cameraTrans.DORotate(rot0, d2).SetEase(Ease.OutCubic);
+        yield return new WaitForSeconds(d2);
+        yield return new WaitForSeconds(d2);
+        bookControlPad.SetActive(true);
     }
 }
