@@ -34,7 +34,7 @@ public class DarkRoomBehaviour : MonoBehaviour
         _mainCamera_defaultParent = mainCamera.parent;
         inPuzzle = false;
 
-        PlayFinalCutScene();
+
     }
 
     public void InitPuzzle()
@@ -85,13 +85,16 @@ public class DarkRoomBehaviour : MonoBehaviour
 
     IEnumerator OnPuzzleEnd_Coroutine()
     {
-        yield return new WaitForSeconds(3.5f);
-        mainCamera.SetParent(_mainCamera_defaultParent);
-        mainCamera.localEulerAngles = Vector3.zero;
-        mainCamera.localPosition = Vector3.zero;
-        mainCamera.DOKill();
-        fpc.enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        crosshair.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        // mainCamera.SetParent(_mainCamera_defaultParent);
+        // mainCamera.localEulerAngles = Vector3.zero;
+        // mainCamera.localPosition = Vector3.zero;
+        // mainCamera.DOKill();
+        // fpc.enabled = true;
+        // Cursor.lockState = CursorLockMode.Locked;
+
+        PlayFinalCutScene();
     }
 
     public void EnterBook()
@@ -107,6 +110,7 @@ public class DarkRoomBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
+    [SerializeField] Transform crosshair;
     [SerializeField] Transform[] heartTrans;
     [SerializeField] float[] heartTransDuration;
 
@@ -132,7 +136,7 @@ public class DarkRoomBehaviour : MonoBehaviour
         shakeAltar.DOShakePosition(5.5f, shakeStrength, 50);
 
         yield return new WaitForSeconds(heartTransDuration[0]);
-        fragmentedHeart.DOScale(0, fragmentedHeartScaleDuration).SetEase(Ease.InBack);
+        fragmentedHeart.DOScale(0, fragmentedHeartScaleDuration).SetEase(Ease.InElastic);
         yield return new WaitForSeconds(fragmentedHeartScaleDuration - 0.4f);
         realHeart.position = heartTrans[0].position;
         realHeart.eulerAngles = heartTrans[0].eulerAngles;
@@ -172,7 +176,7 @@ public class DarkRoomBehaviour : MonoBehaviour
             mainCamera.DORotate(t.eulerAngles, d).SetEase(Ease.InOutQuad);
             yield return new WaitForSeconds(d);
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         finalCg.DOFade(1, 3);
     }
 
