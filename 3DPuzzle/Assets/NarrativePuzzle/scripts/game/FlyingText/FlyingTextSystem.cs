@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Game.Scripts.com.FlyingText
 {
