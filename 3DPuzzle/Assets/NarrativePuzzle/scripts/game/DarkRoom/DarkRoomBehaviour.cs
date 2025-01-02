@@ -33,6 +33,8 @@ public class DarkRoomBehaviour : MonoBehaviour
 
         _mainCamera_defaultParent = mainCamera.parent;
         inPuzzle = false;
+
+        PlayFinalCutScene();
     }
 
     public void InitPuzzle()
@@ -104,4 +106,75 @@ public class DarkRoomBehaviour : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
     }
+
+    [SerializeField] Transform[] heartTrans;
+    [SerializeField] float[] heartTransDuration;
+
+    [SerializeField] Transform[] camTrans;
+    [SerializeField] float[] camTransDuration;
+
+    [SerializeField] Transform fragmentedHeart;
+    [SerializeField] Transform realHeart;
+    [SerializeField] float realHeartScaleDuration = 1.5f;
+    [SerializeField] float fragmentedHeartScaleDuration = 2f;
+    [SerializeField] Transform shakeAltar;
+    [SerializeField] float shakeStrength = 0.5f;
+    [SerializeField] float commonDelay = 1.5f;
+    public void PlayFinalCutScene()
+    {
+        StartCoroutine(HeartCo());
+        StartCoroutine(CamCo());
+    }
+
+    IEnumerator HeartCo()
+    {
+        yield return new WaitForSeconds(commonDelay);
+        shakeAltar.DOShakePosition(5.5f, shakeStrength, 50);
+
+        yield return new WaitForSeconds(heartTransDuration[0]);
+        fragmentedHeart.DOScale(0, fragmentedHeartScaleDuration).SetEase(Ease.InBack);
+        yield return new WaitForSeconds(fragmentedHeartScaleDuration - 0.4f);
+        realHeart.position = heartTrans[0].position;
+        realHeart.eulerAngles = heartTrans[0].eulerAngles;
+        realHeart.localScale = Vector3.zero;
+        realHeart.gameObject.SetActive(true);
+        realHeart.DOScale(1, realHeartScaleDuration).SetEase(Ease.OutElastic);
+        yield return new WaitForSeconds(realHeartScaleDuration + 0.5f);
+
+        for (int i = 1; i < heartTrans.Length; i++)
+        {
+            var t = heartTrans[i];
+            var d = heartTransDuration[i];
+            realHeart.DOKill();
+            realHeart.DOMove(t.position, d).SetEase(Ease.InOutQuad);
+            realHeart.DORotate(t.eulerAngles, d).SetEase(Ease.InOutQuad);
+            yield return new WaitForSeconds(d);
+        }
+
+    }
+
+    IEnumerator CamCo()
+    {
+        fpc.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        yield return new WaitForSeconds(commonDelay);
+        mainCamera.SetParent(_mainCamera_defaultParent);
+        mainCamera.position = camTrans[0].position;
+        mainCamera.eulerAngles = camTrans[0].eulerAngles;
+        yield return new WaitForSeconds(camTransDuration[0]);
+
+        for (int i = 1; i < camTrans.Length; i++)
+        {
+            var t = camTrans[i];
+            var d = camTransDuration[i];
+            mainCamera.DOKill();
+            mainCamera.DOMove(t.position, d).SetEase(Ease.InOutQuad);
+            mainCamera.DORotate(t.eulerAngles, d).SetEase(Ease.InOutQuad);
+            yield return new WaitForSeconds(d);
+        }
+        yield return new WaitForSeconds(4f);
+        finalCg.DOFade(1, 3);
+    }
+
+    [SerializeField] CanvasGroup finalCg;
 }
