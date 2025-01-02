@@ -110,24 +110,32 @@ public class BookSceneSwitcher : MonoBehaviour
 
     IEnumerator GuideCameraAndDisableBookControlThenBack(Transform[] trans, Transform cameraTrans)
     {
+        cameraTrans.DOKill();
         var pos0 = cameraTrans.position;
         var rot0 = cameraTrans.eulerAngles;
         bookControlPad.SetActive(false);
-        yield return new WaitForSeconds(1);
-        var duration = 1.5f;
+        yield return new WaitForSeconds(0.3f);
+        var duration = 1.8f;
+        bool first = true;
         foreach (var t in trans)
         {
             yield return new WaitForSeconds(1);
-            cameraTrans.DOMove(t.position, duration);
-            cameraTrans.DORotate(t.eulerAngles, duration);
-            yield return new WaitForSeconds(duration);
+            var d = duration;
+            if (first)
+            {
+                d += 1;
+                first = false;
+            }
+            cameraTrans.DOMove(t.position, d).SetEase(Ease.InOutCubic);
+            cameraTrans.DORotate(t.eulerAngles, d).SetEase(Ease.InOutCubic);
+            yield return new WaitForSeconds(d);
         }
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.5f);
         var d2 = duration + 2;
+        cameraTrans.DOKill();
         cameraTrans.DOMove(pos0, d2).SetEase(Ease.OutCubic);
         cameraTrans.DORotate(rot0, d2).SetEase(Ease.OutCubic);
-        yield return new WaitForSeconds(d2);
         yield return new WaitForSeconds(d2);
         bookControlPad.SetActive(true);
     }
