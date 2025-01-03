@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00935826bb4271e49905bde85e11e249, type: 3}
   m_Name: FT1 4
   m_EditorClassIdentifier: 
-  content: Mimikuss for you
-  color: {r: 0.6792453, g: 0, b: 0, a: 1}
-  timeRatio: 1
-  breakCharNum: 40
+  content: 'let me
+
+    find the heart '
+  color: {r: 0.75222296, g: 0.71383643, b: 1, a: 1}
+  timeRatio: 0.5
+  breakCharNum: 16
   fromCorner: 1
   leaveCorner: 2

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00935826bb4271e49905bde85e11e249, type: 3}
   m_Name: FT1 3
   m_EditorClassIdentifier: 
-  content: My mum told me uncle Sam is under these rocks
-  color: {r: 0.6792453, g: 0, b: 0, a: 1}
-  timeRatio: 1
-  breakCharNum: 28
+  content: "Anticipation? \nWhat would \nmy future become?"
+  color: {r: 0.83333325, g: 0.96024716, b: 1, a: 1}
+  timeRatio: 0.5
+  breakCharNum: 19
   fromCorner: 0
   leaveCorner: 3

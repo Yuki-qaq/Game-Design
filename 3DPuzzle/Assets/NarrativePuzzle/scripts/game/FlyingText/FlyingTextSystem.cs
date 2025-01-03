@@ -42,6 +42,12 @@ namespace Assets.Game.Scripts.com.FlyingText
                     pos = fromTransRB.position;
                     break;
             }
+
+            if (fromTransCenter == null)
+            {
+                return pos;
+            }
+
             return pos - fromTransCenter.position;
         }
 

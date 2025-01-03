@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00935826bb4271e49905bde85e11e249, type: 3}
   m_Name: FT1 2
   m_EditorClassIdentifier: 
-  content: Show your heart
+  content: Who I am... for my friend?
   color: {r: 0.91194963, g: 0.91194963, b: 0.91194963, a: 1}
   timeRatio: 1
   breakCharNum: 40
